@@ -24,6 +24,3 @@ func take_damage(the_damage):
 		vehicle.vfx_handler.play_splode_effect()
 		vehicle.sprite_flash_timer.start()
 		vehicle.die_timer.start()
-		
-		
-#	health_text.set_text(str("Health: ", str(current_health)))
