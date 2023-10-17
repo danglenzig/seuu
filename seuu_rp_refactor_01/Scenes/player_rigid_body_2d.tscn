@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://c6wgmd2hply66"]
+[gd_scene load_steps=38 format=3 uid="uid://c6wgmd2hply66"]
 
 [ext_resource type="Script" path="res://Scripts/player_rigid_body_2D.gd" id="1_lb2rc"]
 [ext_resource type="Texture2D" uid="uid://b5tceiboerc7t" path="res://Images/car_01_sprite.png" id="2_jas0f"]
@@ -29,6 +29,8 @@
 [ext_resource type="Texture2D" uid="uid://cwuok3xpub5b2" path="res://Images/VFX/ElectricalExplosion_16.png" id="27_m6toe"]
 [ext_resource type="Texture2D" uid="uid://cgvrdfvcn47al" path="res://Images/race_car_07_shadow.png" id="28_tkrk8"]
 [ext_resource type="Script" path="res://Scripts/shadow_sprite.gd" id="29_tvoqo"]
+[ext_resource type="Script" path="res://Scenes/vfx_handler.gd" id="30_dg1v0"]
+[ext_resource type="Script" path="res://Scenes/stats_manager.gd" id="31_hh2b5"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_gq6q6"]
 bounce = 0.15
@@ -125,6 +127,17 @@ animations = [{
 "speed": 40.0
 }]
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_48yq1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_klts0")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_uwg4n"]
 radius = 54.0
 height = 254.0
@@ -146,36 +159,40 @@ z_as_relative = false
 scale = Vector2(0.75, 0.75)
 texture = ExtResource("2_jas0f")
 
-[node name="FireEffect" type="Sprite2D" parent="PlayerSprite"]
-z_index = -1
-position = Vector2(10.0007, 201)
-rotation = 3.14159
-scale = Vector2(0.33, 0.33)
-texture = ExtResource("3_klts0")
+[node name="vfx_handler" type="Node2D" parent="PlayerSprite"]
+scale = Vector2(1.33333, 1.33333)
+script = ExtResource("30_dg1v0")
 
-[node name="SpriteFlashTimer" type="Timer" parent="."]
-process_callback = 0
-wait_time = 0.1
-
-[node name="SparkFX" type="AnimatedSprite2D" parent="."]
-visible = false
+[node name="SparkVFX" type="AnimatedSprite2D" parent="PlayerSprite/vfx_handler"]
 z_as_relative = false
 position = Vector2(4.00029, 79)
 scale = Vector2(0.66, 0.66)
 sprite_frames = SubResource("SpriteFrames_g75ci")
 animation = &"effect"
 
-[node name="SplodeFX" type="AnimatedSprite2D" parent="."]
-visible = false
+[node name="SplodeVFX" type="AnimatedSprite2D" parent="PlayerSprite/vfx_handler"]
 z_as_relative = false
 position = Vector2(4.00012, 34)
 sprite_frames = SubResource("SpriteFrames_esay6")
 frame = 6
 frame_progress = 0.740801
 
-[node name="TriggerArea2D" type="Area2D" parent="."]
+[node name="AccelerateVFX" type="AnimatedSprite2D" parent="PlayerSprite/vfx_handler"]
+z_index = -10
+z_as_relative = false
+position = Vector2(5.00067, 185)
+rotation = 3.14159
+scale = Vector2(0.33, 0.33)
+sprite_frames = SubResource("SpriteFrames_48yq1")
+frame_progress = 0.914646
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="TriggerArea2D"]
+[node name="SpriteFlashTimer" type="Timer" parent="."]
+process_callback = 0
+wait_time = 0.1
+
+[node name="VehicleTrigger" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="VehicleTrigger"]
 position = Vector2(3.00001, 3.99999)
 shape = SubResource("CapsuleShape2D_uwg4n")
 
@@ -191,11 +208,12 @@ ground_detect = 33.0
 wait_time = 3.0
 one_shot = true
 
-[node name="movement_handler" type="Node" parent="."]
+[node name="stats_manager" type="Node2D" parent="."]
+script = ExtResource("31_hh2b5")
 
 [connection signal="timeout" from="SpriteFlashTimer" to="." method="_on_sprite_flash_timer_timeout"]
-[connection signal="area_entered" from="TriggerArea2D" to="." method="_on_trigger_area_2d_area_entered"]
-[connection signal="area_exited" from="TriggerArea2D" to="." method="_on_trigger_area_2d_area_exited"]
-[connection signal="area_exited" from="TriggerArea2D" to="ShadowSprite" method="_on_trigger_area_2d_area_exited"]
-[connection signal="body_entered" from="TriggerArea2D" to="." method="_on_trigger_area_2d_body_entered"]
+[connection signal="area_entered" from="VehicleTrigger" to="." method="_on_trigger_area_2d_area_entered"]
+[connection signal="area_exited" from="VehicleTrigger" to="." method="_on_trigger_area_2d_area_exited"]
+[connection signal="area_exited" from="VehicleTrigger" to="ShadowSprite" method="_on_trigger_area_2d_area_exited"]
+[connection signal="body_entered" from="VehicleTrigger" to="." method="_on_trigger_area_2d_body_entered"]
 [connection signal="timeout" from="DieTimer" to="." method="_on_die_timer_timeout"]

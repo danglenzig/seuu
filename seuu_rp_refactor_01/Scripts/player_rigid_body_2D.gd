@@ -51,12 +51,14 @@ var laps_completed: int = 0
 
 var sprite_flash_timer ## a child node
 var die_timer
+var vfx_handler
+var stats_manager
 
 # sprites
 var my_sprite: Sprite2D
-var accelerate_effect_sprite: Sprite2D
-var spark_fx_anim: AnimatedSprite2D
-var splode_fx_anim: AnimatedSprite2D
+#var accelerate_effect_sprite: Sprite2D
+#var spark_fx_anim: AnimatedSprite2D
+#var splode_fx_anim: AnimatedSprite2D
 var gun_sprite: Sprite2D
 var start_move_speed: float
 
@@ -125,13 +127,6 @@ func _ready():
 
 	# sprites
 	my_sprite = get_node("PlayerSprite")
-#	gun_sprite = get_node("Weapon")
-	accelerate_effect_sprite = get_node("PlayerSprite/FireEffect")
-	spark_fx_anim = get_node("SparkFX")
-	splode_fx_anim = get_node("SplodeFX")
-	accelerate_effect_sprite.visible = false
-	spark_fx_anim.visible = false
-	splode_fx_anim.visible = false
 	
 	# misc
 	set_linear_damp(linear_drag)
@@ -151,7 +146,8 @@ func _ready():
 		health_text.set_text(str("Health: ", str(current_health)))
 		laps_text.set_text(str("Laps: ", str(laps_completed), " / ", laps_this_race))
 	
-	
+	vfx_handler = my_sprite.get_node("vfx_handler")
+	stats_manager = get_node("stats_manager")
 	
 
 func _process(delta):
@@ -230,58 +226,18 @@ func handle_boost():
 		var current_rotation = my_sprite.rotation
 		var forward_direction = Vector2(1, 0).rotated(current_rotation)
 		self.apply_central_force(forward_direction * move_speed * .33)
+		vfx_handler.play_accelerate_effect(true)
 	else:
 		move_speed = start_move_speed
 		max_speed = start_max_speed
+		vfx_handler.play_accelerate_effect(false)
 
 
-func _on_trigger_area_2d_body_entered(body):
-	
-	var my_string = "barricade"
-	if my_string in body.name:
-		impact_effect("barricade")
-		take_damage(damage_per_hit)
+
 		
-	my_string = "street_collider"
-	if my_string in body.name:
-		impact_effect("street_collider")
-		take_damage(damage_per_hit)
-		
-	my_string = "boundary"
-	if my_string in body.name:
-		impact_effect("boundary")
-		take_damage(damage_per_hit)
-		
-	
-		
-func impact_effect(collider_type):
-	spark_fx_anim.visible = true
-	spark_fx_anim.play()
-	
-func splode():
-	splode_fx_anim.visible = true
-	splode_fx_anim.play()
-	
+
 func toggle_sprite_visibility():
 	my_sprite.visible = not my_sprite.visible
-
-func take_damage(the_damage):
-	if current_drive_mode == DriveMode.RACE:
-		current_health -= the_damage
-		var health_text = hud_canvas.get_node("HealthText")
-	
-	
-		## check if dead
-		if current_health < 0:
-			current_health = 0
-			level_root.player_can_move = false
-			splode()
-			sprite_flash_timer.start()
-			die_timer.start()
-			
-			
-		health_text.set_text(str("Health: ", str(current_health)))
-
 
 func _on_sprite_flash_timer_timeout():
 	toggle_sprite_visibility()
@@ -304,6 +260,32 @@ func start_race_sequence(the_race_id):
 	next_race = the_race_id
 	
 	
+func go_back_to_explore_mode():
+	shot_caller.switch_to_game_scene(2)
+	level_root.queue_free()
+
+func _on_die_timer_timeout():
+	go_back_to_explore_mode()
+	
+func _on_trigger_area_2d_body_entered(body):
+	
+	var my_string = "barricade"
+	if my_string in body.name:
+		if current_drive_mode == DriveMode.RACE:
+			stats_manager.take_damage(damage_per_hit)
+		vfx_handler.play_impact_effect(my_string)
+		
+	my_string = "street_collider"
+	if my_string in body.name:
+		if current_drive_mode == DriveMode.RACE:
+			stats_manager.take_damage(damage_per_hit)
+		vfx_handler.play_impact_effect(my_string)
+		
+	my_string = "boundary"
+	if my_string in body.name:
+		if current_drive_mode == DriveMode.RACE:
+			stats_manager.take_damage(damage_per_hit)
+		vfx_handler.play_impact_effect(my_string)
 
 
 func _on_trigger_area_2d_area_entered(area):
@@ -313,9 +295,4 @@ func _on_trigger_area_2d_area_entered(area):
 			start_race_sequence(area.race_id)
 
 
-func go_back_to_explore_mode():
-	shot_caller.switch_to_game_scene(2)
-	level_root.queue_free()
 
-func _on_die_timer_timeout():
-	go_back_to_explore_mode()
