@@ -4,4 +4,3 @@
 
 [node name="shot_caller" type="Node"]
 script = ExtResource("1_6se3c")
-start_at_scene_number = 2

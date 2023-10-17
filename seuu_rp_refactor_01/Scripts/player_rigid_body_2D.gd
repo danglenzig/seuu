@@ -5,6 +5,11 @@ extends RigidBody2D
 enum DriveMode {RACE, EXPLORE}
 enum InputMode {VEHICLE, UI}
 
+
+
+var quest_marker
+
+
 var current_drive_mode: DriveMode
 var current_input_mode: InputMode
 # player for impact one-shot sfx
@@ -68,8 +73,7 @@ var start_move_speed: float
 
 # get the UI
 var hud_canvas
-
-
+var my_pointer
 
 func _ready():
 	level_root = get_parent() ## this is the city map
@@ -127,6 +131,7 @@ func _ready():
 
 	# sprites
 	my_sprite = get_node("PlayerSprite")
+	my_pointer = get_node("Pointer")
 	
 	# misc
 	set_linear_damp(linear_drag)
@@ -149,6 +154,11 @@ func _ready():
 	vfx_handler = my_sprite.get_node("vfx_handler")
 	stats_manager = get_node("stats_manager")
 	
+	
+	quest_marker = level_root.get_node("quest_marker")
+	
+	if current_drive_mode == DriveMode.RACE:
+		my_pointer.visible = false
 
 func _process(delta):
 	
@@ -156,7 +166,13 @@ func _process(delta):
 	can_brake = level_root.player_can_brake
 	can_boost = level_root.player_can_boost
 	
-	## manage HP
+#	my_pointer.point_at_something(quest_marker.position)
+
+	if current_drive_mode == DriveMode.EXPLORE:
+		var point_pos = quest_marker.get_global_position()
+		my_pointer.point_at_something(point_pos)
+	
+	
 	
 
 func _physics_process(delta):

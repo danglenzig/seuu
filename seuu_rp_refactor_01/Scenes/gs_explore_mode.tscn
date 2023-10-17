@@ -93,3 +93,7 @@ theme_override_font_sizes/font_size = 66
 text = "Start the Race?"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="quest_marker" type="Node2D" parent="." groups=["quest_marker"]]
+z_as_relative = false
+position = Vector2(12272, 196)

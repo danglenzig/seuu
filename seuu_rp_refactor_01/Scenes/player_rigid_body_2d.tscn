@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=3 uid="uid://c6wgmd2hply66"]
+[gd_scene load_steps=40 format=3 uid="uid://c6wgmd2hply66"]
 
 [ext_resource type="Script" path="res://Scripts/player_rigid_body_2D.gd" id="1_lb2rc"]
 [ext_resource type="Texture2D" uid="uid://b5tceiboerc7t" path="res://Images/car_01_sprite.png" id="2_jas0f"]
@@ -31,6 +31,8 @@
 [ext_resource type="Script" path="res://Scripts/shadow_sprite.gd" id="29_tvoqo"]
 [ext_resource type="Script" path="res://Scenes/vfx_handler.gd" id="30_dg1v0"]
 [ext_resource type="Script" path="res://Scenes/stats_manager.gd" id="31_hh2b5"]
+[ext_resource type="Script" path="res://Scenes/pointer.gd" id="32_tiuwl"]
+[ext_resource type="Texture2D" uid="uid://cftn0n1knrdmx" path="res://Images/ramp_arrow.png" id="33_k2b7m"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_gq6q6"]
 bounce = 0.15
@@ -210,6 +212,15 @@ one_shot = true
 
 [node name="stats_manager" type="Node2D" parent="."]
 script = ExtResource("31_hh2b5")
+
+[node name="Pointer" type="Node2D" parent="."]
+script = ExtResource("32_tiuwl")
+
+[node name="Sprite2D" type="Sprite2D" parent="Pointer"]
+position = Vector2(-0.000720378, -199)
+rotation = -1.5708
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("33_k2b7m")
 
 [connection signal="timeout" from="SpriteFlashTimer" to="." method="_on_sprite_flash_timer_timeout"]
 [connection signal="area_entered" from="VehicleTrigger" to="." method="_on_trigger_area_2d_area_entered"]
