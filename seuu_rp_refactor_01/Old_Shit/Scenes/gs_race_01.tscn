@@ -1,0 +1,78 @@
+[gd_scene load_steps=6 format=3 uid="uid://c2o6s1aynmnwe"]
+
+[ext_resource type="Script" path="res://Old_Shit/Scripts/gs_race_mode.gd" id="1_sf4f8"]
+[ext_resource type="Script" path="res://Old_Shit/Scenes/player_follow_cam.gd" id="2_vyxul"]
+[ext_resource type="PackedScene" uid="uid://c6wgmd2hply66" path="res://Old_Shit/Scenes/player_rigid_body_2d.tscn" id="3_lyjeh"]
+[ext_resource type="PackedScene" uid="uid://tlfpk2gax8wh" path="res://Old_Shit/Scenes/explore_mode_grid.tscn" id="4_dxs6s"]
+[ext_resource type="FontFile" uid="uid://drgsxmxrovwlu" path="res://Old_Shit/Fonts/pcsenior.ttf" id="5_mup3b"]
+
+[node name="gs_race_01" type="Node2D"]
+script = ExtResource("1_sf4f8")
+
+[node name="PlayerFollowCam" type="Camera2D" parent="."]
+zoom = Vector2(0.25, 0.25)
+process_callback = 0
+position_smoothing_enabled = true
+position_smoothing_speed = 12.0
+drag_horizontal_enabled = true
+drag_vertical_enabled = true
+script = ExtResource("2_vyxul")
+
+[node name="PlayerRigidBody2D" parent="." instance=ExtResource("3_lyjeh")]
+z_as_relative = false
+position = Vector2(392, 215)
+
+[node name="explore_mode_grid" parent="." instance=ExtResource("4_dxs6s")]
+z_index = -1000
+z_as_relative = false
+position = Vector2(410, 209)
+
+[node name="HUDCanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="HealthText" type="Label" parent="HUDCanvasLayer"]
+offset_left = 39.0
+offset_top = 21.0
+offset_right = 415.0
+offset_bottom = 70.0
+theme_override_colors/font_color = Color(1, 1, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_offset_y = 3
+theme_override_fonts/font = ExtResource("5_mup3b")
+theme_override_font_sizes/font_size = 20
+text = "Health: NN"
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="LapsText" type="Label" parent="HUDCanvasLayer"]
+offset_left = 39.0
+offset_top = 72.0
+offset_right = 415.0
+offset_bottom = 121.0
+theme_override_colors/font_color = Color(1, 1, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_offset_y = 3
+theme_override_fonts/font = ExtResource("5_mup3b")
+theme_override_font_sizes/font_size = 20
+text = "Laps: NN / NN"
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Label" type="Label" parent="HUDCanvasLayer"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -736.0
+offset_top = 27.0
+offset_right = -34.0
+offset_bottom = 70.0
+grow_horizontal = 0
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 0, 1)
+theme_override_constants/outline_size = 60
+theme_override_fonts/font = ExtResource("5_mup3b")
+theme_override_font_sizes/font_size = 30
+text = "The Frisco Fiasco!"
+horizontal_alignment = 2
+vertical_alignment = 1

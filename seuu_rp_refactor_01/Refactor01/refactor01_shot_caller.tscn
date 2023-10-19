@@ -1,0 +1,215 @@
+[gd_scene load_steps=5 format=3 uid="uid://dx0jyaimt46ii"]
+
+[ext_resource type="Script" path="res://Refactor01/refactor01_shot_caller.gd" id="1_tqldx"]
+[ext_resource type="FontFile" uid="uid://drgsxmxrovwlu" path="res://Fonts/pcsenior.ttf" id="2_cfhqs"]
+[ext_resource type="Texture2D" uid="uid://vhmwxtq026g1" path="res://Slides/i_am_a_cutscene.png" id="3_8jvo3"]
+[ext_resource type="Script" path="res://Refactor01/quest_panel.gd" id="4_3y0tq"]
+
+[node name="refactor01_shot_caller" type="Node"]
+script = ExtResource("1_tqldx")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ExploreModePanel" type="Panel" parent="CanvasLayer"]
+self_modulate = Color(1, 1, 1, 0)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -576.0
+offset_top = -324.0
+offset_right = 576.0
+offset_bottom = 324.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ULLabel" type="Label" parent="CanvasLayer/ExploreModePanel"]
+layout_mode = 0
+offset_left = 25.0
+offset_top = 13.0
+offset_right = 377.0
+offset_bottom = 82.0
+theme_override_colors/font_color = Color(1, 1, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_offset_y = 3
+theme_override_fonts/font = ExtResource("2_cfhqs")
+theme_override_font_sizes/font_size = 20
+text = "I am the upper-left corner hud text"
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="URLabel" type="Label" parent="CanvasLayer/ExploreModePanel"]
+layout_mode = 0
+offset_left = 776.0
+offset_top = 19.0
+offset_right = 1128.0
+offset_bottom = 88.0
+theme_override_colors/font_color = Color(1, 1, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_offset_y = 3
+theme_override_fonts/font = ExtResource("2_cfhqs")
+theme_override_font_sizes/font_size = 20
+text = "I am the upper-right corner hud text"
+horizontal_alignment = 2
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="LLLabel" type="Label" parent="CanvasLayer/ExploreModePanel"]
+layout_mode = 0
+offset_left = 28.0
+offset_top = 560.0
+offset_right = 380.0
+offset_bottom = 629.0
+theme_override_colors/font_color = Color(1, 1, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_offset_y = 3
+theme_override_fonts/font = ExtResource("2_cfhqs")
+theme_override_font_sizes/font_size = 20
+text = "I am the lowr-left corner hud text"
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="LRLabel" type="Label" parent="CanvasLayer/ExploreModePanel"]
+layout_mode = 0
+offset_left = 778.0
+offset_top = 560.0
+offset_right = 1130.0
+offset_bottom = 629.0
+theme_override_colors/font_color = Color(1, 1, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_offset_y = 3
+theme_override_fonts/font = ExtResource("2_cfhqs")
+theme_override_font_sizes/font_size = 20
+text = "I am the lower-right corner hud text"
+horizontal_alignment = 2
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="CenterLabel" type="Label" parent="CanvasLayer/ExploreModePanel"]
+self_modulate = Color(1, 1, 1, 0.25098)
+layout_mode = 0
+offset_left = 4.0
+offset_top = 149.0
+offset_right = 1153.0
+offset_bottom = 466.0
+theme_override_colors/font_color = Color(1, 1, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 8
+theme_override_constants/shadow_offset_y = 8
+theme_override_fonts/font = ExtResource("2_cfhqs")
+theme_override_font_sizes/font_size = 80
+text = "CENTER TEXT!"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="RaceModePanel" type="Panel" parent="CanvasLayer"]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -576.0
+offset_top = -324.0
+offset_right = 576.0
+offset_bottom = 324.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CutsceneModePanel" type="Panel" parent="CanvasLayer"]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -576.0
+offset_top = -324.0
+offset_right = 576.0
+offset_bottom = 324.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="cutscene_slide" type="Sprite2D" parent="CanvasLayer/CutsceneModePanel"]
+position = Vector2(569, 325)
+texture = ExtResource("3_8jvo3")
+
+[node name="cutscene_prompt_text" type="Label" parent="CanvasLayer/CutsceneModePanel"]
+layout_mode = 0
+offset_left = 225.0
+offset_top = 578.0
+offset_right = 915.0
+offset_bottom = 612.0
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_cfhqs")
+theme_override_font_sizes/font_size = 30
+text = "Cutscene prompt text"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="cutscene_dialog_panel" type="Panel" parent="CanvasLayer/CutsceneModePanel"]
+self_modulate = Color(0.235294, 0.235294, 0.235294, 1)
+layout_mode = 0
+offset_left = 69.0
+offset_top = 414.0
+offset_right = 1096.0
+offset_bottom = 551.0
+
+[node name="cutscene_dialog_text" type="Label" parent="CanvasLayer/CutsceneModePanel/cutscene_dialog_panel"]
+layout_mode = 0
+offset_left = 29.0
+offset_top = 23.0
+offset_right = 997.0
+offset_bottom = 116.0
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_cfhqs")
+theme_override_font_sizes/font_size = 16
+text = "cutscene dialog text"
+
+[node name="QuestMenuPanel" type="Panel" parent="CanvasLayer"]
+visible = false
+self_modulate = Color(1, 1, 1, 0.921569)
+offset_left = 123.0
+offset_top = 101.0
+offset_right = 1011.0
+offset_bottom = 526.0
+script = ExtResource("4_3y0tq")
+
+[node name="QuestNameLabel" type="Label" parent="CanvasLayer/QuestMenuPanel"]
+layout_mode = 0
+offset_left = 157.0
+offset_top = 78.0
+offset_right = 727.0
+offset_bottom = 151.0
+theme_override_colors/font_color = Color(1, 1, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_offset_y = 3
+theme_override_fonts/font = ExtResource("2_cfhqs")
+theme_override_font_sizes/font_size = 30
+text = "Current quest name"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="TaskListLabel" type="Label" parent="CanvasLayer/QuestMenuPanel"]
+layout_mode = 0
+offset_left = 249.0
+offset_top = 191.0
+offset_right = 649.0
+offset_bottom = 314.0
+theme_override_colors/font_color = Color(1, 1, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_cfhqs")
+theme_override_font_sizes/font_size = 20
+text = "Quest task #1
+Quest Task # 2
+And so on"
+horizontal_alignment = 1
+autowrap_mode = 3

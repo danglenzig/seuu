@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://dcyfwh71bt8x8"]
+
+[ext_resource type="Script" path="res://Refactor01/refactor01_player_object.gd" id="1_dcvon"]
+
+[node name="refactor01_player_object" type="Node2D"]
+script = ExtResource("1_dcvon")

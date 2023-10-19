@@ -1,0 +1,231 @@
+[gd_scene load_steps=40 format=3 uid="uid://c6wgmd2hply66"]
+
+[ext_resource type="Script" path="res://Old_Shit/Scripts/player_rigid_body_2D.gd" id="1_lb2rc"]
+[ext_resource type="Texture2D" uid="uid://b5tceiboerc7t" path="res://Refactor01/CarStuff/car_01_sprite.png" id="2_jas0f"]
+[ext_resource type="Texture2D" uid="uid://cwrv7grx3f0l5" path="res://Refactor01/VFX/ToonFire_A2.png" id="3_klts0"]
+[ext_resource type="Texture2D" uid="uid://biasej5dqy0s6" path="res://Refactor01/VFX/Sparks_A1.png" id="4_05kb2"]
+[ext_resource type="Texture2D" uid="uid://b3saitye1mlj2" path="res://Refactor01/VFX/Sparks_A2.png" id="5_2oe0l"]
+[ext_resource type="Texture2D" uid="uid://bjpcnwlrtt5tr" path="res://Refactor01/VFX/Sparks_A3.png" id="6_2jd8e"]
+[ext_resource type="Texture2D" uid="uid://3d0naypw4d10" path="res://Refactor01/VFX/Sparks_A4.png" id="7_v5jwx"]
+[ext_resource type="Texture2D" uid="uid://c3ry2h00cnq3c" path="res://Refactor01/VFX/Sparks_A5.png" id="8_x845v"]
+[ext_resource type="Texture2D" uid="uid://5ckrmvulfrxh" path="res://Refactor01/VFX/Sparks_A6.png" id="9_mmhmg"]
+[ext_resource type="Texture2D" uid="uid://dxdxolovgxbti" path="res://Refactor01/VFX/Sparks_A7.png" id="10_a86sl"]
+[ext_resource type="Texture2D" uid="uid://d3dnpmqkmiei8" path="res://Refactor01/VFX/Sparks_A8.png" id="11_utk5b"]
+[ext_resource type="Texture2D" uid="uid://d1gk4t774nj30" path="res://Refactor01/VFX/ElectricalExplosion_1.png" id="12_ra4sb"]
+[ext_resource type="Texture2D" uid="uid://c6a1hbyuv3phb" path="res://Refactor01/VFX/ElectricalExplosion_2.png" id="13_umiw2"]
+[ext_resource type="Texture2D" uid="uid://b2papp4blafek" path="res://Refactor01/VFX/ElectricalExplosion_3.png" id="14_d373p"]
+[ext_resource type="Texture2D" uid="uid://c6dsk4doyugtj" path="res://Refactor01/VFX/ElectricalExplosion_4.png" id="15_kjkh6"]
+[ext_resource type="Texture2D" uid="uid://dbylfe5tdp2s5" path="res://Refactor01/VFX/ElectricalExplosion_5.png" id="16_awrqh"]
+[ext_resource type="Texture2D" uid="uid://rivphrgbkwqp" path="res://Refactor01/VFX/ElectricalExplosion_6.png" id="17_t8cmk"]
+[ext_resource type="Texture2D" uid="uid://c6gkdhsb372qs" path="res://Refactor01/VFX/ElectricalExplosion_7.png" id="18_vkikh"]
+[ext_resource type="Texture2D" uid="uid://bhxo3ihpc4wnr" path="res://Refactor01/VFX/ElectricalExplosion_8.png" id="19_cawc6"]
+[ext_resource type="Texture2D" uid="uid://dyi2gq5lbm6tk" path="res://Refactor01/VFX/ElectricalExplosion_9.png" id="20_ck78e"]
+[ext_resource type="Texture2D" uid="uid://b0g16tmbpe0p0" path="res://Refactor01/VFX/ElectricalExplosion_10.png" id="21_bekw6"]
+[ext_resource type="Texture2D" uid="uid://dgpr02x6dec8v" path="res://Refactor01/VFX/ElectricalExplosion_11.png" id="22_cfqw2"]
+[ext_resource type="Texture2D" uid="uid://kwwjloxwvmto" path="res://Refactor01/VFX/ElectricalExplosion_12.png" id="23_f2anb"]
+[ext_resource type="Texture2D" uid="uid://c0lnhpvgl6klm" path="res://Refactor01/VFX/ElectricalExplosion_13.png" id="24_ir6w1"]
+[ext_resource type="Texture2D" uid="uid://bb4ff7fd40r1s" path="res://Refactor01/VFX/ElectricalExplosion_14.png" id="25_qp1jj"]
+[ext_resource type="Texture2D" uid="uid://dm5b3do0gx731" path="res://Refactor01/VFX/ElectricalExplosion_15.png" id="26_2fv2n"]
+[ext_resource type="Texture2D" uid="uid://cwuok3xpub5b2" path="res://Refactor01/VFX/ElectricalExplosion_16.png" id="27_m6toe"]
+[ext_resource type="Texture2D" uid="uid://cgvrdfvcn47al" path="res://Refactor01/CarStuff/car_01_shadow.png" id="28_tkrk8"]
+[ext_resource type="Script" path="res://Old_Shit/Scripts/shadow_sprite.gd" id="29_tvoqo"]
+[ext_resource type="Script" path="res://Old_Shit/Scenes/vfx_handler.gd" id="30_dg1v0"]
+[ext_resource type="Script" path="res://Old_Shit/Scenes/stats_manager.gd" id="31_hh2b5"]
+[ext_resource type="Script" path="res://Old_Shit/Scenes/pointer.gd" id="32_tiuwl"]
+[ext_resource type="Texture2D" uid="uid://cftn0n1knrdmx" path="res://Old_Shit/Images/ramp_arrow.png" id="33_k2b7m"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_gq6q6"]
+bounce = 0.15
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_g81x8"]
+radius = 42.4998
+height = 138.0
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_g75ci"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_05kb2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_2oe0l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_2jd8e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_v5jwx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_x845v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_mmhmg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_a86sl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_utk5b")
+}],
+"loop": false,
+"name": &"effect",
+"speed": 60.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_esay6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("12_ra4sb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_umiw2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_d373p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_kjkh6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_awrqh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_t8cmk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_vkikh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_cawc6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_ck78e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_bekw6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_cfqw2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_f2anb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_ir6w1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_qp1jj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_2fv2n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_m6toe")
+}],
+"loop": false,
+"name": &"default",
+"speed": 40.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_48yq1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_klts0")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_uwg4n"]
+radius = 54.0
+height = 254.0
+
+[node name="PlayerRigidBody2D" type="RigidBody2D"]
+rotation = 1.5708
+physics_material_override = SubResource("PhysicsMaterial_gq6q6")
+gravity_scale = 0.0
+lock_rotation = true
+freeze_mode = 1
+script = ExtResource("1_lb2rc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(3.50022, 16.0001)
+shape = SubResource("CapsuleShape2D_g81x8")
+
+[node name="PlayerSprite" type="Sprite2D" parent="."]
+z_as_relative = false
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("2_jas0f")
+
+[node name="vfx_handler" type="Node2D" parent="PlayerSprite"]
+visible = false
+scale = Vector2(1.33333, 1.33333)
+script = ExtResource("30_dg1v0")
+
+[node name="SparkVFX" type="AnimatedSprite2D" parent="PlayerSprite/vfx_handler"]
+z_as_relative = false
+position = Vector2(4.00029, 79)
+scale = Vector2(0.66, 0.66)
+sprite_frames = SubResource("SpriteFrames_g75ci")
+animation = &"effect"
+
+[node name="SplodeVFX" type="AnimatedSprite2D" parent="PlayerSprite/vfx_handler"]
+z_as_relative = false
+position = Vector2(4.00012, 34)
+sprite_frames = SubResource("SpriteFrames_esay6")
+frame = 6
+frame_progress = 0.740801
+
+[node name="AccelerateVFX" type="AnimatedSprite2D" parent="PlayerSprite/vfx_handler"]
+z_index = -10
+z_as_relative = false
+position = Vector2(5.00067, 185)
+rotation = 3.14159
+scale = Vector2(0.33, 0.33)
+sprite_frames = SubResource("SpriteFrames_48yq1")
+frame_progress = 0.914646
+
+[node name="SpriteFlashTimer" type="Timer" parent="."]
+process_callback = 0
+wait_time = 0.1
+
+[node name="VehicleTrigger" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="VehicleTrigger"]
+position = Vector2(3.00001, 3.99999)
+shape = SubResource("CapsuleShape2D_uwg4n")
+
+[node name="ShadowSprite" type="Sprite2D" parent="."]
+z_index = -10
+position = Vector2(1, -3.8147e-06)
+texture = ExtResource("28_tkrk8")
+script = ExtResource("29_tvoqo")
+my_gravity = 40
+ground_detect = 33.0
+
+[node name="DieTimer" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+
+[node name="stats_manager" type="Node2D" parent="."]
+script = ExtResource("31_hh2b5")
+
+[node name="Pointer" type="Node2D" parent="."]
+script = ExtResource("32_tiuwl")
+
+[node name="Sprite2D" type="Sprite2D" parent="Pointer"]
+position = Vector2(-0.000720378, -199)
+rotation = -1.5708
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("33_k2b7m")
+
+[connection signal="timeout" from="SpriteFlashTimer" to="." method="_on_sprite_flash_timer_timeout"]
+[connection signal="area_entered" from="VehicleTrigger" to="." method="_on_trigger_area_2d_area_entered"]
+[connection signal="area_exited" from="VehicleTrigger" to="." method="_on_trigger_area_2d_area_exited"]
+[connection signal="area_exited" from="VehicleTrigger" to="ShadowSprite" method="_on_trigger_area_2d_area_exited"]
+[connection signal="body_entered" from="VehicleTrigger" to="." method="_on_trigger_area_2d_body_entered"]
+[connection signal="timeout" from="DieTimer" to="." method="_on_die_timer_timeout"]
