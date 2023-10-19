@@ -16,7 +16,7 @@ var current_music: AudioStream
 var current_scene: Node2D = null
 var current_menu: Node2D = null
 
-@export var start_at_scene_number: int = 0
+@export var start_at_scene_number: int
 
 '''
 the three types of tier-2 scenes: explore, race, menu, and cutscene
@@ -51,6 +51,7 @@ var hud_cutscene_mode_panel: Panel
 var hud_cutscene_dialog_panel: Panel
 var hud_cutscene_slide: Sprite2D
 var quest_menu_panel: Panel
+var controls_help_panel: Panel
 
 func _ready():
 	
@@ -64,6 +65,7 @@ func _ready():
 	hud_cutscene_dialog_panel = hud_cutscene_mode_panel.get_node("cutscene_dialog_panel")
 	hud_cutscene_slide = hud_cutscene_mode_panel.get_node("cutscene_slide")
 	quest_menu_panel = hud_canvas.get_node("QuestMenuPanel")
+	controls_help_panel = hud_canvas.get_node("ControlsHelp")
 	
 	hud_explore_mode_panel.visible = false
 	hud_race_mode_panel.visible = false
@@ -72,6 +74,8 @@ func _ready():
 	hud_cutscene_dialog_panel.visible = false
 	
 	quest_menu_panel.visible = false
+	
+	controls_help_panel.visible = false
 	
 	current_scene = null
 	current_menu = null
@@ -123,6 +127,9 @@ func switch_to_menu(the_menu_number: int):
 	
 
 ######### HUD functions ##########
+
+func set_controls_help_visible(the_bool: bool):
+	controls_help_panel.visible = the_bool
 	
 func set_explore_hud_panel_visible(the_bool: bool):
 	hud_explore_mode_panel.visible = the_bool

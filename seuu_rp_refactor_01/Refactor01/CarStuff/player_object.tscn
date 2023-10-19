@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://d01un2resfa7u"]
+[gd_scene load_steps=36 format=3 uid="uid://d01un2resfa7u"]
 
 [ext_resource type="Texture2D" uid="uid://b5tceiboerc7t" path="res://Refactor01/CarStuff/car_01_sprite.png" id="1_jocuo"]
 [ext_resource type="Script" path="res://Refactor01/CarStuff/player_object.gd" id="1_mxsti"]
@@ -30,8 +30,11 @@
 [ext_resource type="Texture2D" uid="uid://cwuok3xpub5b2" path="res://Refactor01/VFX/ElectricalExplosion_16.png" id="27_qtpht"]
 [ext_resource type="Texture2D" uid="uid://cgvrdfvcn47al" path="res://Refactor01/CarStuff/car_01_shadow.png" id="28_63yx6"]
 
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_82rbg"]
+bounce = 0.33
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_rtox6"]
-radius = 18.4391
+radius = 21.0237
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5ig4b"]
 radius = 57.0
@@ -144,11 +147,12 @@ animations = [{
 
 [node name="player_object" type="RigidBody2D"]
 rotation = 1.5708
+physics_material_override = SubResource("PhysicsMaterial_82rbg")
 script = ExtResource("1_mxsti")
 boost_dampening = 0.09
 
 [node name="RBCollisionCircle" type="CollisionShape2D" parent="."]
-position = Vector2(0, -13)
+position = Vector2(-2.57492e-05, -7)
 shape = SubResource("CircleShape2D_rtox6")
 
 [node name="CarSprite" type="Sprite2D" parent="."]
@@ -162,6 +166,7 @@ texture = ExtResource("1_jocuo")
 shape = SubResource("CapsuleShape2D_5ig4b")
 
 [node name="RocketVFX" type="AnimatedSprite2D" parent="CarSprite"]
+visible = false
 z_index = -10
 z_as_relative = false
 position = Vector2(11, 208)

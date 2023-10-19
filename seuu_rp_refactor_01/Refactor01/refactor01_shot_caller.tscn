@@ -7,10 +7,12 @@
 
 [node name="refactor01_shot_caller" type="Node"]
 script = ExtResource("1_tqldx")
+start_at_scene_number = 2
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="ExploreModePanel" type="Panel" parent="CanvasLayer"]
+visible = false
 self_modulate = Color(1, 1, 1, 0)
 anchors_preset = 8
 anchor_left = 0.5
@@ -213,3 +215,47 @@ Quest Task # 2
 And so on"
 horizontal_alignment = 1
 autowrap_mode = 3
+
+[node name="ControlsHelp" type="Panel" parent="CanvasLayer"]
+offset_left = 18.0
+offset_top = 17.0
+offset_right = 334.0
+offset_bottom = 73.0
+
+[node name="Label" type="Label" parent="CanvasLayer/ControlsHelp"]
+visible = false
+layout_mode = 0
+offset_left = 17.0
+offset_top = 14.0
+offset_right = 309.0
+offset_bottom = 55.0
+theme_override_colors/font_color = Color(1, 1, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 2
+theme_override_fonts/font = ExtResource("2_cfhqs")
+theme_override_font_sizes/font_size = 10
+text = "Move: Left-stick / WASD
+Boost: Right-trigger /Enter"
+
+[node name="ControlsHelpXOnly" type="Panel" parent="CanvasLayer"]
+offset_left = 18.0
+offset_top = 17.0
+offset_right = 334.0
+offset_bottom = 73.0
+
+[node name="Label" type="Label" parent="CanvasLayer/ControlsHelpXOnly"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 7.0
+offset_right = 308.0
+offset_bottom = 49.0
+theme_override_colors/font_color = Color(1, 1, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 2
+theme_override_fonts/font = ExtResource("2_cfhqs")
+theme_override_font_sizes/font_size = 10
+text = "Go: A button
+Stop/Reverse: B button
+Steer: Left-stick"

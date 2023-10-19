@@ -5,6 +5,9 @@ func print_to_console(the_string: String):
 	print(str(my_name, " says: ", the_string))
 ##################################################
 
+enum  ControlsMode {XONLY, XY}
+@export var controls_mode: ControlsMode
+
 @export var boost_dampening: float = 0.5
 
 var my_sprite: Sprite2D
@@ -70,11 +73,22 @@ func _process(delta):
 	pass
 	
 func _physics_process(delta):
-	handle_rb_movement()
-	handle_sprite_rotation()
+	
+	if controls_mode == ControlsMode.XY:
+		handle_rb_movement()
+		handle_sprite_rotation()
+		handle_rb_boost()
+		
+	if controls_mode == ControlsMode.XONLY:
+		
+		handle_xonly_controls()
+		
+		
+		handle_rb_brakes()
+		
 	handle_shadow()
-	handle_rb_boost()
-	handle_rb_brakes()
+	
+	
 	
 func handle_move_input():
 	var move_input_v2: Vector2 = Vector2.ZERO
@@ -105,6 +119,42 @@ func handle_boost_input():
 	
 func handle_action_input():
 	pass
+
+
+
+func handle_xonly_controls():
+	var current_speed = abs(get_linear_velocity().length())
+	var move_force = 1 - (current_speed / current_max_speed)
+	move_force *= my_move_speed
+	if not is_airborne:
+		if can_move:
+			if Input.is_action_pressed("go"):
+				set_linear_damp(my_linear_drag)
+				var current_rotation = my_sprite.rotation
+				var local_forward = Vector2(1,0).rotated(current_rotation)
+				self.apply_central_force(local_forward * move_force)
+			elif Input.is_action_pressed("stop"):
+				set_linear_damp(my_linear_drag * my_braking_power)
+				var current_rotation = my_sprite.rotation
+				var local_forward = Vector2(1,0).rotated(current_rotation)
+				self.apply_central_force(local_forward * -move_force * 0.33)
+			else:
+				set_linear_damp(my_linear_drag)
+			xonly_steering()
+			
+func xonly_steering():
+	var steer_input: float = Input.get_axis("player_move_left", "player_move_right")
+	print_to_console(str(steer_input))
+	var move_input: float = 0
+	if Input.is_action_pressed("go"):
+		move_input += 1
+	elif Input.is_action_pressed("stop"):
+		move_input -= 1
+	if move_input != 0:
+		my_sprite.rotation += my_rotate_speed * steer_input
+	elif abs(get_linear_velocity().length()) > 100:
+		my_sprite.rotation += my_rotate_speed * steer_input
+	
 	
 func handle_rb_movement():
 	var the_move_input: Vector2 = handle_move_input()
