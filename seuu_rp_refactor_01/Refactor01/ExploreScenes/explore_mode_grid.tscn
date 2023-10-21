@@ -1417,12 +1417,14 @@ flip_h = true
 [node name="big_street_colliders" type="Node2D" parent="."]
 
 [node name="street_collider_01" type="StaticBody2D" parent="big_street_colliders"]
+collision_mask = 15
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="big_street_colliders/street_collider_01"]
 polygon = PackedVector2Array(505, 508, 561, 482, 3267, 482, 3314, 516, 3343, 560, 3342, 1991, 3315, 2036, 3265, 2067, 556, 2070, 514, 2040, 484, 1992, 479, 559)
 
 [node name="street_collider_02" type="StaticBody2D" parent="big_street_colliders"]
 position = Vector2(0, 21)
+collision_mask = 15
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="big_street_colliders/street_collider_02"]
 position = Vector2(5112, 6)
@@ -1430,12 +1432,14 @@ polygon = PackedVector2Array(505, 508, 561, 482, 3267, 482, 3314, 516, 3343, 560
 
 [node name="street_collider_03" type="StaticBody2D" parent="big_street_colliders"]
 position = Vector2(10198, -6)
+collision_mask = 15
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="big_street_colliders/street_collider_03"]
 polygon = PackedVector2Array(505, 508, 561, 482, 3267, 482, 3314, 516, 3343, 560, 3342, 1991, 3315, 2036, 3265, 2067, 556, 2070, 514, 2040, 484, 1992, 479, 559)
 
 [node name="street_collider_04" type="StaticBody2D" parent="big_street_colliders"]
 position = Vector2(10198, 15)
+collision_mask = 15
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="big_street_colliders/street_collider_04"]
 position = Vector2(5112, 6)
@@ -1443,12 +1447,14 @@ polygon = PackedVector2Array(505, 508, 561, 482, 3267, 482, 3314, 516, 3343, 560
 
 [node name="street_collider_05" type="StaticBody2D" parent="big_street_colliders"]
 position = Vector2(20386, -33)
+collision_mask = 15
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="big_street_colliders/street_collider_05"]
 polygon = PackedVector2Array(505, 508, 561, 482, 3267, 482, 3314, 516, 3343, 560, 3342, 1991, 3315, 2036, 3265, 2067, 556, 2070, 514, 2040, 484, 1992, 479, 559)
 
 [node name="street_collider_06" type="StaticBody2D" parent="big_street_colliders"]
 position = Vector2(20386, -12)
+collision_mask = 15
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="big_street_colliders/street_collider_06"]
 position = Vector2(5112, 6)
@@ -1456,12 +1462,14 @@ polygon = PackedVector2Array(505, 508, 561, 482, 3267, 482, 3314, 516, 3343, 560
 
 [node name="street_collider_07" type="StaticBody2D" parent="big_street_colliders"]
 position = Vector2(-15, 3793)
+collision_mask = 15
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="big_street_colliders/street_collider_07"]
 polygon = PackedVector2Array(505, 508, 561, 482, 3267, 482, 3314, 516, 3343, 560, 3342, 1991, 3315, 2036, 3265, 2067, 556, 2070, 514, 2040, 484, 1992, 479, 559)
 
 [node name="street_collider_08" type="StaticBody2D" parent="big_street_colliders"]
 position = Vector2(-15, 3814)
+collision_mask = 15
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="big_street_colliders/street_collider_08"]
 position = Vector2(5112, 6)
@@ -1469,12 +1477,14 @@ polygon = PackedVector2Array(505, 508, 561, 482, 3267, 482, 3314, 516, 3343, 560
 
 [node name="street_collider_09" type="StaticBody2D" parent="big_street_colliders"]
 position = Vector2(10183, 3787)
+collision_mask = 15
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="big_street_colliders/street_collider_09"]
 polygon = PackedVector2Array(505, 508, 561, 482, 3267, 482, 3314, 516, 3343, 560, 3342, 1991, 3315, 2036, 3265, 2067, 556, 2070, 514, 2040, 484, 1992, 479, 559)
 
 [node name="street_collider_10" type="StaticBody2D" parent="big_street_colliders"]
 position = Vector2(10183, 3808)
+collision_mask = 15
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="big_street_colliders/street_collider_10"]
 position = Vector2(5112, 6)
@@ -1482,12 +1492,14 @@ polygon = PackedVector2Array(505, 508, 561, 482, 3267, 482, 3314, 516, 3343, 560
 
 [node name="street_collider_11" type="StaticBody2D" parent="big_street_colliders"]
 position = Vector2(20371, 3760)
+collision_mask = 15
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="big_street_colliders/street_collider_11"]
 polygon = PackedVector2Array(505, 508, 561, 482, 3267, 482, 3314, 516, 3343, 560, 3342, 1991, 3315, 2036, 3265, 2067, 556, 2070, 514, 2040, 484, 1992, 479, 559)
 
 [node name="street_collider_12" type="StaticBody2D" parent="big_street_colliders"]
 position = Vector2(20371, 3781)
+collision_mask = 15
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="big_street_colliders/street_collider_12"]
 position = Vector2(5112, 6)
@@ -1495,12 +1507,14 @@ polygon = PackedVector2Array(505, 508, 561, 482, 3267, 482, 3314, 516, 3343, 560
 
 [node name="street_collider_13" type="StaticBody2D" parent="big_street_colliders"]
 position = Vector2(-18, 7617)
+collision_mask = 15
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="big_street_colliders/street_collider_13"]
 polygon = PackedVector2Array(505, 508, 561, 482, 3267, 482, 3314, 516, 3343, 560, 3342, 1991, 3315, 2036, 3265, 2067, 556, 2070, 514, 2040, 484, 1992, 479, 559)
 
 [node name="street_collider_14" type="StaticBody2D" parent="big_street_colliders"]
 position = Vector2(-18, 7638)
+collision_mask = 15
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="big_street_colliders/street_collider_14"]
 position = Vector2(5112, 6)
@@ -1508,12 +1522,14 @@ polygon = PackedVector2Array(505, 508, 561, 482, 3267, 482, 3314, 516, 3343, 560
 
 [node name="street_collider_15" type="StaticBody2D" parent="big_street_colliders"]
 position = Vector2(10180, 7611)
+collision_mask = 15
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="big_street_colliders/street_collider_15"]
 polygon = PackedVector2Array(505, 508, 561, 482, 3267, 482, 3314, 516, 3343, 560, 3342, 1991, 3315, 2036, 3265, 2067, 556, 2070, 514, 2040, 484, 1992, 479, 559)
 
 [node name="street_collider_16" type="StaticBody2D" parent="big_street_colliders"]
 position = Vector2(10180, 7632)
+collision_mask = 15
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="big_street_colliders/street_collider_16"]
 position = Vector2(5112, 6)
@@ -1521,12 +1537,14 @@ polygon = PackedVector2Array(505, 508, 561, 482, 3267, 482, 3314, 516, 3343, 560
 
 [node name="street_collider_17" type="StaticBody2D" parent="big_street_colliders"]
 position = Vector2(20368, 7584)
+collision_mask = 15
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="big_street_colliders/street_collider_17"]
 polygon = PackedVector2Array(505, 508, 561, 482, 3267, 482, 3314, 516, 3343, 560, 3342, 1991, 3315, 2036, 3265, 2067, 556, 2070, 514, 2040, 484, 1992, 479, 559)
 
 [node name="street_collider_18" type="StaticBody2D" parent="big_street_colliders"]
 position = Vector2(20368, 7605)
+collision_mask = 15
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="big_street_colliders/street_collider_18"]
 position = Vector2(5112, 6)
@@ -1534,12 +1552,14 @@ polygon = PackedVector2Array(505, 508, 561, 482, 3267, 482, 3314, 516, 3343, 560
 
 [node name="street_collider_19" type="StaticBody2D" parent="big_street_colliders"]
 position = Vector2(-11, 11473)
+collision_mask = 15
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="big_street_colliders/street_collider_19"]
 polygon = PackedVector2Array(505, 508, 561, 482, 3267, 482, 3314, 516, 3343, 560, 3342, 1991, 3315, 2036, 3265, 2067, 556, 2070, 514, 2040, 484, 1992, 479, 559)
 
 [node name="street_collider_20" type="StaticBody2D" parent="big_street_colliders"]
 position = Vector2(-11, 11494)
+collision_mask = 15
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="big_street_colliders/street_collider_20"]
 position = Vector2(5112, 6)
@@ -1547,12 +1567,14 @@ polygon = PackedVector2Array(505, 508, 561, 482, 3267, 482, 3314, 516, 3343, 560
 
 [node name="street_collider_21" type="StaticBody2D" parent="big_street_colliders"]
 position = Vector2(10187, 11467)
+collision_mask = 15
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="big_street_colliders/street_collider_21"]
 polygon = PackedVector2Array(505, 508, 561, 482, 3267, 482, 3314, 516, 3343, 560, 3342, 1991, 3315, 2036, 3265, 2067, 556, 2070, 514, 2040, 484, 1992, 479, 559)
 
 [node name="street_collider_22" type="StaticBody2D" parent="big_street_colliders"]
 position = Vector2(10187, 11488)
+collision_mask = 15
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="big_street_colliders/street_collider_22"]
 position = Vector2(5112, 6)
@@ -1560,12 +1582,14 @@ polygon = PackedVector2Array(505, 508, 561, 482, 3267, 482, 3314, 516, 3343, 560
 
 [node name="street_collider_23" type="StaticBody2D" parent="big_street_colliders"]
 position = Vector2(20375, 11440)
+collision_mask = 15
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="big_street_colliders/street_collider_23"]
 polygon = PackedVector2Array(505, 508, 561, 482, 3267, 482, 3314, 516, 3343, 560, 3342, 1991, 3315, 2036, 3265, 2067, 556, 2070, 514, 2040, 484, 1992, 479, 559)
 
 [node name="street_collider_24" type="StaticBody2D" parent="big_street_colliders"]
 position = Vector2(20375, 11461)
+collision_mask = 15
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="big_street_colliders/street_collider_24"]
 position = Vector2(5112, 6)
@@ -1573,12 +1597,14 @@ polygon = PackedVector2Array(505, 508, 561, 482, 3267, 482, 3314, 516, 3343, 560
 
 [node name="street_collider_25" type="StaticBody2D" parent="big_street_colliders"]
 position = Vector2(-11, 14017)
+collision_mask = 15
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="big_street_colliders/street_collider_25"]
 polygon = PackedVector2Array(505, 508, 561, 482, 3267, 482, 3314, 516, 3343, 560, 3342, 1991, 3315, 2036, 3265, 2067, 556, 2070, 514, 2040, 484, 1992, 479, 559)
 
 [node name="street_collider_26" type="StaticBody2D" parent="big_street_colliders"]
 position = Vector2(-11, 14038)
+collision_mask = 15
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="big_street_colliders/street_collider_26"]
 position = Vector2(5112, 6)
@@ -1586,12 +1612,14 @@ polygon = PackedVector2Array(505, 508, 561, 482, 3267, 482, 3314, 516, 3343, 560
 
 [node name="street_collider_27" type="StaticBody2D" parent="big_street_colliders"]
 position = Vector2(10187, 14011)
+collision_mask = 15
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="big_street_colliders/street_collider_27"]
 polygon = PackedVector2Array(505, 508, 561, 482, 3267, 482, 3314, 516, 3343, 560, 3342, 1991, 3315, 2036, 3265, 2067, 556, 2070, 514, 2040, 484, 1992, 479, 559)
 
 [node name="street_collider_28" type="StaticBody2D" parent="big_street_colliders"]
 position = Vector2(10187, 14032)
+collision_mask = 15
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="big_street_colliders/street_collider_28"]
 position = Vector2(5112, 6)
@@ -1599,12 +1627,14 @@ polygon = PackedVector2Array(505, 508, 561, 482, 3267, 482, 3314, 516, 3343, 560
 
 [node name="street_collider_29" type="StaticBody2D" parent="big_street_colliders"]
 position = Vector2(20375, 13984)
+collision_mask = 15
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="big_street_colliders/street_collider_29"]
 polygon = PackedVector2Array(505, 508, 561, 482, 3267, 482, 3314, 516, 3343, 560, 3342, 1991, 3315, 2036, 3265, 2067, 556, 2070, 514, 2040, 484, 1992, 479, 559)
 
 [node name="street_collider_30" type="StaticBody2D" parent="big_street_colliders"]
 position = Vector2(20375, 14005)
+collision_mask = 15
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="big_street_colliders/street_collider_30"]
 position = Vector2(5112, 6)
@@ -1612,12 +1642,14 @@ polygon = PackedVector2Array(505, 508, 561, 482, 3267, 482, 3314, 516, 3343, 560
 
 [node name="street_collider_31" type="StaticBody2D" parent="big_street_colliders"]
 position = Vector2(1, -2564)
+collision_mask = 15
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="big_street_colliders/street_collider_31"]
 polygon = PackedVector2Array(505, 508, 561, 482, 3267, 482, 3314, 516, 3343, 560, 3342, 1991, 3315, 2036, 3265, 2067, 556, 2070, 514, 2040, 484, 1992, 479, 559)
 
 [node name="street_collider_32" type="StaticBody2D" parent="big_street_colliders"]
 position = Vector2(1, -2543)
+collision_mask = 15
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="big_street_colliders/street_collider_32"]
 position = Vector2(5112, 6)
@@ -1625,12 +1657,14 @@ polygon = PackedVector2Array(505, 508, 561, 482, 3267, 482, 3314, 516, 3343, 560
 
 [node name="street_collider_33" type="StaticBody2D" parent="big_street_colliders"]
 position = Vector2(10199, -2570)
+collision_mask = 15
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="big_street_colliders/street_collider_33"]
 polygon = PackedVector2Array(505, 508, 561, 482, 3267, 482, 3314, 516, 3343, 560, 3342, 1991, 3315, 2036, 3265, 2067, 556, 2070, 514, 2040, 484, 1992, 479, 559)
 
 [node name="street_collider_34" type="StaticBody2D" parent="big_street_colliders"]
 position = Vector2(10199, -2549)
+collision_mask = 15
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="big_street_colliders/street_collider_34"]
 position = Vector2(5112, 6)
@@ -1638,12 +1672,14 @@ polygon = PackedVector2Array(505, 508, 561, 482, 3267, 482, 3314, 516, 3343, 560
 
 [node name="street_collider_35" type="StaticBody2D" parent="big_street_colliders"]
 position = Vector2(20387, -2597)
+collision_mask = 15
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="big_street_colliders/street_collider_35"]
 polygon = PackedVector2Array(505, 508, 561, 482, 3267, 482, 3314, 516, 3343, 560, 3342, 1991, 3315, 2036, 3265, 2067, 556, 2070, 514, 2040, 484, 1992, 479, 559)
 
 [node name="street_collider_36" type="StaticBody2D" parent="big_street_colliders"]
 position = Vector2(20387, -2576)
+collision_mask = 15
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="big_street_colliders/street_collider_36"]
 position = Vector2(5112, 6)
@@ -1652,23 +1688,27 @@ polygon = PackedVector2Array(505, 508, 561, 482, 3267, 482, 3314, 516, 3343, 560
 [node name="extra_medium_street_colliders" type="Node2D" parent="."]
 
 [node name="street_collider_01" type="StaticBody2D" parent="extra_medium_street_colliders"]
+collision_mask = 15
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="extra_medium_street_colliders/street_collider_01"]
 polygon = PackedVector2Array(4305, 555, 4345, 506, 4384, 486, 4535, 486, 4596, 513, 4614, 563, 4617, 1979, 4587, 2045, 4533, 2068, 4387, 2077, 4330, 2041, 4298, 1993)
 
 [node name="street_collider_05" type="StaticBody2D" parent="extra_medium_street_colliders"]
+collision_mask = 15
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="extra_medium_street_colliders/street_collider_05"]
 position = Vector2(-5099, 4)
 polygon = PackedVector2Array(4305, 555, 4345, 506, 4384, 486, 4535, 486, 4596, 513, 4614, 563, 4617, 1979, 4587, 2045, 4533, 2068, 4387, 2077, 4330, 2041, 4298, 1993)
 
 [node name="street_collider_02" type="StaticBody2D" parent="extra_medium_street_colliders"]
+collision_mask = 15
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="extra_medium_street_colliders/street_collider_02"]
 position = Vector2(5103, 7)
 polygon = PackedVector2Array(4305, 555, 4345, 506, 4384, 486, 4535, 486, 4596, 513, 4614, 563, 4617, 1979, 4587, 2045, 4533, 2068, 4387, 2077, 4330, 2041, 4298, 1993)
 
 [node name="street_collider_03" type="StaticBody2D" parent="extra_medium_street_colliders"]
+collision_mask = 15
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="extra_medium_street_colliders/street_collider_03"]
 position = Vector2(10208, -6)
@@ -1676,6 +1716,7 @@ polygon = PackedVector2Array(4305, 555, 4345, 506, 4384, 486, 4535, 486, 4596, 5
 
 [node name="street_collider_04" type="StaticBody2D" parent="extra_medium_street_colliders"]
 position = Vector2(5101, 11)
+collision_mask = 15
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="extra_medium_street_colliders/street_collider_04"]
 position = Vector2(10208, -6)
@@ -1683,6 +1724,7 @@ polygon = PackedVector2Array(4305, 555, 4345, 506, 4384, 486, 4535, 486, 4596, 5
 
 [node name="street_collider_06" type="StaticBody2D" parent="extra_medium_street_colliders"]
 position = Vector2(10184, 0)
+collision_mask = 15
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="extra_medium_street_colliders/street_collider_06"]
 position = Vector2(10208, -6)
@@ -1690,6 +1732,7 @@ polygon = PackedVector2Array(4305, 555, 4345, 506, 4384, 486, 4535, 486, 4596, 5
 
 [node name="street_collider_07" type="StaticBody2D" parent="extra_medium_street_colliders"]
 position = Vector2(15278, -21)
+collision_mask = 15
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="extra_medium_street_colliders/street_collider_07"]
 position = Vector2(10208, -6)
@@ -1697,12 +1740,14 @@ polygon = PackedVector2Array(4305, 555, 4345, 506, 4384, 486, 4535, 486, 4596, 5
 
 [node name="street_collider_08" type="StaticBody2D" parent="extra_medium_street_colliders"]
 position = Vector2(5, 3823)
+collision_mask = 15
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="extra_medium_street_colliders/street_collider_08"]
 polygon = PackedVector2Array(4305, 555, 4345, 506, 4384, 486, 4535, 486, 4596, 513, 4614, 563, 4617, 1979, 4587, 2045, 4533, 2068, 4387, 2077, 4330, 2041, 4298, 1993)
 
 [node name="street_collider_09" type="StaticBody2D" parent="extra_medium_street_colliders"]
 position = Vector2(5, 3823)
+collision_mask = 15
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="extra_medium_street_colliders/street_collider_09"]
 position = Vector2(-5099, 4)
@@ -1710,6 +1755,7 @@ polygon = PackedVector2Array(4305, 555, 4345, 506, 4384, 486, 4535, 486, 4596, 5
 
 [node name="street_collider_10" type="StaticBody2D" parent="extra_medium_street_colliders"]
 position = Vector2(5, 3823)
+collision_mask = 15
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="extra_medium_street_colliders/street_collider_10"]
 position = Vector2(5103, 7)
@@ -1717,6 +1763,7 @@ polygon = PackedVector2Array(4305, 555, 4345, 506, 4384, 486, 4535, 486, 4596, 5
 
 [node name="street_collider_11" type="StaticBody2D" parent="extra_medium_street_colliders"]
 position = Vector2(5, 3823)
+collision_mask = 15
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="extra_medium_street_colliders/street_collider_11"]
 position = Vector2(10208, -6)
@@ -1724,6 +1771,7 @@ polygon = PackedVector2Array(4305, 555, 4345, 506, 4384, 486, 4535, 486, 4596, 5
 
 [node name="street_collider_12" type="StaticBody2D" parent="extra_medium_street_colliders"]
 position = Vector2(5106, 3834)
+collision_mask = 15
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="extra_medium_street_colliders/street_collider_12"]
 position = Vector2(10208, -6)
@@ -1731,6 +1779,7 @@ polygon = PackedVector2Array(4305, 555, 4345, 506, 4384, 486, 4535, 486, 4596, 5
 
 [node name="street_collider_13" type="StaticBody2D" parent="extra_medium_street_colliders"]
 position = Vector2(10189, 3823)
+collision_mask = 15
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="extra_medium_street_colliders/street_collider_13"]
 position = Vector2(10208, -6)
@@ -1738,6 +1787,7 @@ polygon = PackedVector2Array(4305, 555, 4345, 506, 4384, 486, 4535, 486, 4596, 5
 
 [node name="street_collider_14" type="StaticBody2D" parent="extra_medium_street_colliders"]
 position = Vector2(15283, 3802)
+collision_mask = 15
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="extra_medium_street_colliders/street_collider_14"]
 position = Vector2(10208, -6)
@@ -1745,12 +1795,14 @@ polygon = PackedVector2Array(4305, 555, 4345, 506, 4384, 486, 4535, 486, 4596, 5
 
 [node name="street_collider_15" type="StaticBody2D" parent="extra_medium_street_colliders"]
 position = Vector2(5, 7646)
+collision_mask = 15
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="extra_medium_street_colliders/street_collider_15"]
 polygon = PackedVector2Array(4305, 555, 4345, 506, 4384, 486, 4535, 486, 4596, 513, 4614, 563, 4617, 1979, 4587, 2045, 4533, 2068, 4387, 2077, 4330, 2041, 4298, 1993)
 
 [node name="street_collider_16" type="StaticBody2D" parent="extra_medium_street_colliders"]
 position = Vector2(5, 7646)
+collision_mask = 15
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="extra_medium_street_colliders/street_collider_16"]
 position = Vector2(-5099, 4)
@@ -1758,6 +1810,7 @@ polygon = PackedVector2Array(4305, 555, 4345, 506, 4384, 486, 4535, 486, 4596, 5
 
 [node name="street_collider_17" type="StaticBody2D" parent="extra_medium_street_colliders"]
 position = Vector2(5, 7646)
+collision_mask = 15
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="extra_medium_street_colliders/street_collider_17"]
 position = Vector2(5103, 7)
@@ -1765,6 +1818,7 @@ polygon = PackedVector2Array(4305, 555, 4345, 506, 4384, 486, 4535, 486, 4596, 5
 
 [node name="street_collider_18" type="StaticBody2D" parent="extra_medium_street_colliders"]
 position = Vector2(5, 7646)
+collision_mask = 15
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="extra_medium_street_colliders/street_collider_18"]
 position = Vector2(10208, -6)
@@ -1772,6 +1826,7 @@ polygon = PackedVector2Array(4305, 555, 4345, 506, 4384, 486, 4535, 486, 4596, 5
 
 [node name="street_collider_19" type="StaticBody2D" parent="extra_medium_street_colliders"]
 position = Vector2(5106, 7657)
+collision_mask = 15
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="extra_medium_street_colliders/street_collider_19"]
 position = Vector2(10208, -6)
@@ -1779,6 +1834,7 @@ polygon = PackedVector2Array(4305, 555, 4345, 506, 4384, 486, 4535, 486, 4596, 5
 
 [node name="street_collider_20" type="StaticBody2D" parent="extra_medium_street_colliders"]
 position = Vector2(10189, 7646)
+collision_mask = 15
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="extra_medium_street_colliders/street_collider_20"]
 position = Vector2(10208, -6)
@@ -1786,6 +1842,7 @@ polygon = PackedVector2Array(4305, 555, 4345, 506, 4384, 486, 4535, 486, 4596, 5
 
 [node name="street_collider_21" type="StaticBody2D" parent="extra_medium_street_colliders"]
 position = Vector2(15283, 7625)
+collision_mask = 15
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="extra_medium_street_colliders/street_collider_21"]
 position = Vector2(10208, -6)
@@ -1793,12 +1850,14 @@ polygon = PackedVector2Array(4305, 555, 4345, 506, 4384, 486, 4535, 486, 4596, 5
 
 [node name="street_collider_22" type="StaticBody2D" parent="extra_medium_street_colliders"]
 position = Vector2(-13, 11462)
+collision_mask = 15
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="extra_medium_street_colliders/street_collider_22"]
 polygon = PackedVector2Array(4305, 555, 4345, 506, 4384, 486, 4535, 486, 4596, 513, 4614, 563, 4617, 1979, 4587, 2045, 4533, 2068, 4387, 2077, 4330, 2041, 4298, 1993)
 
 [node name="street_collider_23" type="StaticBody2D" parent="extra_medium_street_colliders"]
 position = Vector2(-13, 11462)
+collision_mask = 15
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="extra_medium_street_colliders/street_collider_23"]
 position = Vector2(-5099, 4)
@@ -1806,6 +1865,7 @@ polygon = PackedVector2Array(4305, 555, 4345, 506, 4384, 486, 4535, 486, 4596, 5
 
 [node name="street_collider_24" type="StaticBody2D" parent="extra_medium_street_colliders"]
 position = Vector2(-13, 11462)
+collision_mask = 15
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="extra_medium_street_colliders/street_collider_24"]
 position = Vector2(5103, 7)
@@ -1813,6 +1873,7 @@ polygon = PackedVector2Array(4305, 555, 4345, 506, 4384, 486, 4535, 486, 4596, 5
 
 [node name="street_collider_25" type="StaticBody2D" parent="extra_medium_street_colliders"]
 position = Vector2(-13, 11462)
+collision_mask = 15
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="extra_medium_street_colliders/street_collider_25"]
 position = Vector2(10208, -6)
@@ -1820,6 +1881,7 @@ polygon = PackedVector2Array(4305, 555, 4345, 506, 4384, 486, 4535, 486, 4596, 5
 
 [node name="street_collider_26" type="StaticBody2D" parent="extra_medium_street_colliders"]
 position = Vector2(5088, 11473)
+collision_mask = 15
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="extra_medium_street_colliders/street_collider_26"]
 position = Vector2(10208, -6)
@@ -1827,6 +1889,7 @@ polygon = PackedVector2Array(4305, 555, 4345, 506, 4384, 486, 4535, 486, 4596, 5
 
 [node name="street_collider_27" type="StaticBody2D" parent="extra_medium_street_colliders"]
 position = Vector2(10171, 11462)
+collision_mask = 15
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="extra_medium_street_colliders/street_collider_27"]
 position = Vector2(10208, -6)
@@ -1834,6 +1897,7 @@ polygon = PackedVector2Array(4305, 555, 4345, 506, 4384, 486, 4535, 486, 4596, 5
 
 [node name="street_collider_28" type="StaticBody2D" parent="extra_medium_street_colliders"]
 position = Vector2(15265, 11441)
+collision_mask = 15
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="extra_medium_street_colliders/street_collider_28"]
 position = Vector2(10208, -6)
@@ -1841,12 +1905,14 @@ polygon = PackedVector2Array(4305, 555, 4345, 506, 4384, 486, 4535, 486, 4596, 5
 
 [node name="street_collider_29" type="StaticBody2D" parent="extra_medium_street_colliders"]
 position = Vector2(5, 14030)
+collision_mask = 15
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="extra_medium_street_colliders/street_collider_29"]
 polygon = PackedVector2Array(4305, 555, 4345, 506, 4384, 486, 4535, 486, 4596, 513, 4614, 563, 4617, 1979, 4587, 2045, 4533, 2068, 4387, 2077, 4330, 2041, 4298, 1993)
 
 [node name="street_collider_30" type="StaticBody2D" parent="extra_medium_street_colliders"]
 position = Vector2(5, 14030)
+collision_mask = 15
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="extra_medium_street_colliders/street_collider_30"]
 position = Vector2(-5099, 4)
@@ -1854,6 +1920,7 @@ polygon = PackedVector2Array(4305, 555, 4345, 506, 4384, 486, 4535, 486, 4596, 5
 
 [node name="street_collider_31" type="StaticBody2D" parent="extra_medium_street_colliders"]
 position = Vector2(5, 14030)
+collision_mask = 15
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="extra_medium_street_colliders/street_collider_31"]
 position = Vector2(5103, 7)
@@ -1861,6 +1928,7 @@ polygon = PackedVector2Array(4305, 555, 4345, 506, 4384, 486, 4535, 486, 4596, 5
 
 [node name="street_collider_32" type="StaticBody2D" parent="extra_medium_street_colliders"]
 position = Vector2(5, 14030)
+collision_mask = 15
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="extra_medium_street_colliders/street_collider_32"]
 position = Vector2(10208, -6)
@@ -1868,6 +1936,7 @@ polygon = PackedVector2Array(4305, 555, 4345, 506, 4384, 486, 4535, 486, 4596, 5
 
 [node name="street_collider_33" type="StaticBody2D" parent="extra_medium_street_colliders"]
 position = Vector2(5106, 14041)
+collision_mask = 15
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="extra_medium_street_colliders/street_collider_33"]
 position = Vector2(10208, -6)
@@ -1875,6 +1944,7 @@ polygon = PackedVector2Array(4305, 555, 4345, 506, 4384, 486, 4535, 486, 4596, 5
 
 [node name="street_collider_34" type="StaticBody2D" parent="extra_medium_street_colliders"]
 position = Vector2(10189, 14030)
+collision_mask = 15
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="extra_medium_street_colliders/street_collider_34"]
 position = Vector2(10208, -6)
@@ -1882,6 +1952,7 @@ polygon = PackedVector2Array(4305, 555, 4345, 506, 4384, 486, 4535, 486, 4596, 5
 
 [node name="street_collider_35" type="StaticBody2D" parent="extra_medium_street_colliders"]
 position = Vector2(15283, 14009)
+collision_mask = 15
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="extra_medium_street_colliders/street_collider_35"]
 position = Vector2(10208, -6)
@@ -1889,12 +1960,14 @@ polygon = PackedVector2Array(4305, 555, 4345, 506, 4384, 486, 4535, 486, 4596, 5
 
 [node name="street_collider_36" type="StaticBody2D" parent="extra_medium_street_colliders"]
 position = Vector2(6, -2555)
+collision_mask = 15
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="extra_medium_street_colliders/street_collider_36"]
 polygon = PackedVector2Array(4305, 555, 4345, 506, 4384, 486, 4535, 486, 4596, 513, 4614, 563, 4617, 1979, 4587, 2045, 4533, 2068, 4387, 2077, 4330, 2041, 4298, 1993)
 
 [node name="street_collider_37" type="StaticBody2D" parent="extra_medium_street_colliders"]
 position = Vector2(6, -2555)
+collision_mask = 15
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="extra_medium_street_colliders/street_collider_37"]
 position = Vector2(-5099, 4)
@@ -1902,6 +1975,7 @@ polygon = PackedVector2Array(4305, 555, 4345, 506, 4384, 486, 4535, 486, 4596, 5
 
 [node name="street_collider_38" type="StaticBody2D" parent="extra_medium_street_colliders"]
 position = Vector2(6, -2555)
+collision_mask = 15
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="extra_medium_street_colliders/street_collider_38"]
 position = Vector2(5103, 7)
@@ -1909,6 +1983,7 @@ polygon = PackedVector2Array(4305, 555, 4345, 506, 4384, 486, 4535, 486, 4596, 5
 
 [node name="street_collider_39" type="StaticBody2D" parent="extra_medium_street_colliders"]
 position = Vector2(6, -2555)
+collision_mask = 15
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="extra_medium_street_colliders/street_collider_39"]
 position = Vector2(10208, -6)
@@ -1916,6 +1991,7 @@ polygon = PackedVector2Array(4305, 555, 4345, 506, 4384, 486, 4535, 486, 4596, 5
 
 [node name="street_collider_40" type="StaticBody2D" parent="extra_medium_street_colliders"]
 position = Vector2(5107, -2544)
+collision_mask = 15
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="extra_medium_street_colliders/street_collider_40"]
 position = Vector2(10208, -6)
@@ -1923,6 +1999,7 @@ polygon = PackedVector2Array(4305, 555, 4345, 506, 4384, 486, 4535, 486, 4596, 5
 
 [node name="street_collider_41" type="StaticBody2D" parent="extra_medium_street_colliders"]
 position = Vector2(10190, -2555)
+collision_mask = 15
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="extra_medium_street_colliders/street_collider_41"]
 position = Vector2(10208, -6)
@@ -1930,6 +2007,7 @@ polygon = PackedVector2Array(4305, 555, 4345, 506, 4384, 486, 4535, 486, 4596, 5
 
 [node name="street_collider_42" type="StaticBody2D" parent="extra_medium_street_colliders"]
 position = Vector2(15284, -2576)
+collision_mask = 15
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="extra_medium_street_colliders/street_collider_42"]
 position = Vector2(10208, -6)
@@ -1938,11 +2016,13 @@ polygon = PackedVector2Array(4305, 555, 4345, 506, 4384, 486, 4535, 486, 4596, 5
 [node name="medium_street_colliders" type="Node2D" parent="."]
 
 [node name="street_collider_01" type="StaticBody2D" parent="medium_street_colliders"]
+collision_mask = 15
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="medium_street_colliders/street_collider_01"]
 polygon = PackedVector2Array(512, 3060, 481, 3101, 479, 3261, 505, 3309, 548, 3338, 3266, 3341, 3308, 3308, 3338, 3270, 3345, 3108, 3317, 3060, 3266, 3026, 560, 3030)
 
 [node name="street_collider_02" type="StaticBody2D" parent="medium_street_colliders"]
+collision_mask = 15
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="medium_street_colliders/street_collider_02"]
 position = Vector2(5117, -7)
@@ -1950,6 +2030,7 @@ polygon = PackedVector2Array(512, 3060, 481, 3101, 479, 3261, 505, 3309, 548, 33
 
 [node name="street_collider_03" type="StaticBody2D" parent="medium_street_colliders"]
 position = Vector2(-11, 8)
+collision_mask = 15
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="medium_street_colliders/street_collider_03"]
 position = Vector2(10211, -10)
@@ -1957,6 +2038,7 @@ polygon = PackedVector2Array(512, 3060, 481, 3101, 479, 3261, 505, 3309, 548, 33
 
 [node name="street_collider_04" type="StaticBody2D" parent="medium_street_colliders"]
 position = Vector2(5081, 8)
+collision_mask = 15
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="medium_street_colliders/street_collider_04"]
 position = Vector2(10211, -10)
@@ -1964,6 +2046,7 @@ polygon = PackedVector2Array(512, 3060, 481, 3101, 479, 3261, 505, 3309, 548, 33
 
 [node name="street_collider_05" type="StaticBody2D" parent="medium_street_colliders"]
 position = Vector2(10177, 11)
+collision_mask = 15
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="medium_street_colliders/street_collider_05"]
 position = Vector2(10211, -10)
@@ -1971,6 +2054,7 @@ polygon = PackedVector2Array(512, 3060, 481, 3101, 479, 3261, 505, 3309, 548, 33
 
 [node name="street_collider_06" type="StaticBody2D" parent="medium_street_colliders"]
 position = Vector2(15273, 7)
+collision_mask = 15
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="medium_street_colliders/street_collider_06"]
 position = Vector2(10211, -10)
@@ -1978,12 +2062,14 @@ polygon = PackedVector2Array(512, 3060, 481, 3101, 479, 3261, 505, 3309, 548, 33
 
 [node name="street_collider_07" type="StaticBody2D" parent="medium_street_colliders"]
 position = Vector2(-22, 3845)
+collision_mask = 15
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="medium_street_colliders/street_collider_07"]
 polygon = PackedVector2Array(512, 3060, 481, 3101, 479, 3261, 505, 3309, 548, 3338, 3266, 3341, 3308, 3308, 3338, 3270, 3345, 3108, 3317, 3060, 3266, 3026, 560, 3030)
 
 [node name="street_collider_08" type="StaticBody2D" parent="medium_street_colliders"]
 position = Vector2(-22, 3845)
+collision_mask = 15
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="medium_street_colliders/street_collider_08"]
 position = Vector2(5117, -7)
@@ -1991,6 +2077,7 @@ polygon = PackedVector2Array(512, 3060, 481, 3101, 479, 3261, 505, 3309, 548, 33
 
 [node name="street_collider_09" type="StaticBody2D" parent="medium_street_colliders"]
 position = Vector2(-33, 3853)
+collision_mask = 15
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="medium_street_colliders/street_collider_09"]
 position = Vector2(10211, -10)
@@ -1998,6 +2085,7 @@ polygon = PackedVector2Array(512, 3060, 481, 3101, 479, 3261, 505, 3309, 548, 33
 
 [node name="street_collider_10" type="StaticBody2D" parent="medium_street_colliders"]
 position = Vector2(5059, 3853)
+collision_mask = 15
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="medium_street_colliders/street_collider_10"]
 position = Vector2(10211, -10)
@@ -2005,6 +2093,7 @@ polygon = PackedVector2Array(512, 3060, 481, 3101, 479, 3261, 505, 3309, 548, 33
 
 [node name="street_collider_11" type="StaticBody2D" parent="medium_street_colliders"]
 position = Vector2(10155, 3856)
+collision_mask = 15
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="medium_street_colliders/street_collider_11"]
 position = Vector2(10211, -10)
@@ -2012,6 +2101,7 @@ polygon = PackedVector2Array(512, 3060, 481, 3101, 479, 3261, 505, 3309, 548, 33
 
 [node name="street_collider_12" type="StaticBody2D" parent="medium_street_colliders"]
 position = Vector2(15251, 3852)
+collision_mask = 15
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="medium_street_colliders/street_collider_12"]
 position = Vector2(10211, -10)
@@ -2019,12 +2109,14 @@ polygon = PackedVector2Array(512, 3060, 481, 3101, 479, 3261, 505, 3309, 548, 33
 
 [node name="street_collider_13" type="StaticBody2D" parent="medium_street_colliders"]
 position = Vector2(-20, 7659)
+collision_mask = 15
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="medium_street_colliders/street_collider_13"]
 polygon = PackedVector2Array(512, 3060, 481, 3101, 479, 3261, 505, 3309, 548, 3338, 3266, 3341, 3308, 3308, 3338, 3270, 3345, 3108, 3317, 3060, 3266, 3026, 560, 3030)
 
 [node name="street_collider_14" type="StaticBody2D" parent="medium_street_colliders"]
 position = Vector2(-20, 7659)
+collision_mask = 15
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="medium_street_colliders/street_collider_14"]
 position = Vector2(5117, -7)
@@ -2032,6 +2124,7 @@ polygon = PackedVector2Array(512, 3060, 481, 3101, 479, 3261, 505, 3309, 548, 33
 
 [node name="street_collider_15" type="StaticBody2D" parent="medium_street_colliders"]
 position = Vector2(-31, 7667)
+collision_mask = 15
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="medium_street_colliders/street_collider_15"]
 position = Vector2(10211, -10)
@@ -2039,6 +2132,7 @@ polygon = PackedVector2Array(512, 3060, 481, 3101, 479, 3261, 505, 3309, 548, 33
 
 [node name="street_collider_16" type="StaticBody2D" parent="medium_street_colliders"]
 position = Vector2(5061, 7667)
+collision_mask = 15
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="medium_street_colliders/street_collider_16"]
 position = Vector2(10211, -10)
@@ -2046,6 +2140,7 @@ polygon = PackedVector2Array(512, 3060, 481, 3101, 479, 3261, 505, 3309, 548, 33
 
 [node name="street_collider_17" type="StaticBody2D" parent="medium_street_colliders"]
 position = Vector2(10157, 7670)
+collision_mask = 15
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="medium_street_colliders/street_collider_17"]
 position = Vector2(10211, -10)
@@ -2053,6 +2148,7 @@ polygon = PackedVector2Array(512, 3060, 481, 3101, 479, 3261, 505, 3309, 548, 33
 
 [node name="street_collider_18" type="StaticBody2D" parent="medium_street_colliders"]
 position = Vector2(15253, 7666)
+collision_mask = 15
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="medium_street_colliders/street_collider_18"]
 position = Vector2(10211, -10)
@@ -2061,131 +2157,153 @@ polygon = PackedVector2Array(512, 3060, 481, 3101, 479, 3261, 505, 3309, 548, 33
 [node name="small_street_colliders" type="Node2D" parent="."]
 
 [node name="street_collider_01" type="StaticBody2D" parent="small_street_colliders"]
+collision_mask = 15
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="small_street_colliders/street_collider_01"]
 polygon = PackedVector2Array(4331, 3059, 4379, 3033, 4537, 3029, 4581, 3057, 4612, 3098, 4614, 3250, 4585, 3306, 4537, 3339, 4380, 3346, 4334, 3314, 4302, 3267, 4299, 3112)
 
 [node name="street_collider_02" type="StaticBody2D" parent="small_street_colliders"]
 position = Vector2(-5096, -3)
+collision_mask = 15
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="small_street_colliders/street_collider_02"]
 polygon = PackedVector2Array(4331, 3059, 4379, 3033, 4537, 3029, 4581, 3057, 4612, 3098, 4614, 3250, 4585, 3306, 4537, 3339, 4380, 3346, 4334, 3314, 4302, 3267, 4299, 3112)
 
 [node name="street_collider_03" type="StaticBody2D" parent="small_street_colliders"]
 position = Vector2(5097, 2)
+collision_mask = 15
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="small_street_colliders/street_collider_03"]
 polygon = PackedVector2Array(4331, 3059, 4379, 3033, 4537, 3029, 4581, 3057, 4612, 3098, 4614, 3250, 4585, 3306, 4537, 3339, 4380, 3346, 4334, 3314, 4302, 3267, 4299, 3112)
 
 [node name="street_collider_04" type="StaticBody2D" parent="small_street_colliders"]
 position = Vector2(10200, -2)
+collision_mask = 15
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="small_street_colliders/street_collider_04"]
 polygon = PackedVector2Array(4331, 3059, 4379, 3033, 4537, 3029, 4581, 3057, 4612, 3098, 4614, 3250, 4585, 3306, 4537, 3339, 4380, 3346, 4334, 3314, 4302, 3267, 4299, 3112)
 
 [node name="street_collider_05" type="StaticBody2D" parent="small_street_colliders"]
 position = Vector2(15292, -6)
+collision_mask = 15
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="small_street_colliders/street_collider_05"]
 polygon = PackedVector2Array(4331, 3059, 4379, 3033, 4537, 3029, 4581, 3057, 4612, 3098, 4614, 3250, 4585, 3306, 4537, 3339, 4380, 3346, 4334, 3314, 4302, 3267, 4299, 3112)
 
 [node name="street_collider_06" type="StaticBody2D" parent="small_street_colliders"]
 position = Vector2(20392, -6)
+collision_mask = 15
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="small_street_colliders/street_collider_06"]
 polygon = PackedVector2Array(4331, 3059, 4379, 3033, 4537, 3029, 4581, 3057, 4612, 3098, 4614, 3250, 4585, 3306, 4537, 3339, 4380, 3346, 4334, 3314, 4302, 3267, 4299, 3112)
 
 [node name="street_collider_07" type="StaticBody2D" parent="small_street_colliders"]
 position = Vector2(25484, -14)
+collision_mask = 15
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="small_street_colliders/street_collider_07"]
 polygon = PackedVector2Array(4331, 3059, 4379, 3033, 4537, 3029, 4581, 3057, 4612, 3098, 4614, 3250, 4585, 3306, 4537, 3339, 4380, 3346, 4334, 3314, 4302, 3267, 4299, 3112)
 
 [node name="street_collider_08" type="StaticBody2D" parent="small_street_colliders"]
 position = Vector2(-1, 3829)
+collision_mask = 15
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="small_street_colliders/street_collider_08"]
 polygon = PackedVector2Array(4331, 3059, 4379, 3033, 4537, 3029, 4581, 3057, 4612, 3098, 4614, 3250, 4585, 3306, 4537, 3339, 4380, 3346, 4334, 3314, 4302, 3267, 4299, 3112)
 
 [node name="street_collider_09" type="StaticBody2D" parent="small_street_colliders"]
 position = Vector2(-5097, 3826)
+collision_mask = 15
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="small_street_colliders/street_collider_09"]
 polygon = PackedVector2Array(4331, 3059, 4379, 3033, 4537, 3029, 4581, 3057, 4612, 3098, 4614, 3250, 4585, 3306, 4537, 3339, 4380, 3346, 4334, 3314, 4302, 3267, 4299, 3112)
 
 [node name="street_collider_10" type="StaticBody2D" parent="small_street_colliders"]
 position = Vector2(5096, 3831)
+collision_mask = 15
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="small_street_colliders/street_collider_10"]
 polygon = PackedVector2Array(4331, 3059, 4379, 3033, 4537, 3029, 4581, 3057, 4612, 3098, 4614, 3250, 4585, 3306, 4537, 3339, 4380, 3346, 4334, 3314, 4302, 3267, 4299, 3112)
 
 [node name="street_collider_11" type="StaticBody2D" parent="small_street_colliders"]
 position = Vector2(10199, 3827)
+collision_mask = 15
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="small_street_colliders/street_collider_11"]
 polygon = PackedVector2Array(4331, 3059, 4379, 3033, 4537, 3029, 4581, 3057, 4612, 3098, 4614, 3250, 4585, 3306, 4537, 3339, 4380, 3346, 4334, 3314, 4302, 3267, 4299, 3112)
 
 [node name="street_collider_12" type="StaticBody2D" parent="small_street_colliders"]
 position = Vector2(15291, 3823)
+collision_mask = 15
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="small_street_colliders/street_collider_12"]
 polygon = PackedVector2Array(4331, 3059, 4379, 3033, 4537, 3029, 4581, 3057, 4612, 3098, 4614, 3250, 4585, 3306, 4537, 3339, 4380, 3346, 4334, 3314, 4302, 3267, 4299, 3112)
 
 [node name="street_collider_13" type="StaticBody2D" parent="small_street_colliders"]
 position = Vector2(20391, 3823)
+collision_mask = 15
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="small_street_colliders/street_collider_13"]
 polygon = PackedVector2Array(4331, 3059, 4379, 3033, 4537, 3029, 4581, 3057, 4612, 3098, 4614, 3250, 4585, 3306, 4537, 3339, 4380, 3346, 4334, 3314, 4302, 3267, 4299, 3112)
 
 [node name="street_collider_14" type="StaticBody2D" parent="small_street_colliders"]
 position = Vector2(25483, 3815)
+collision_mask = 15
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="small_street_colliders/street_collider_14"]
 polygon = PackedVector2Array(4331, 3059, 4379, 3033, 4537, 3029, 4581, 3057, 4612, 3098, 4614, 3250, 4585, 3306, 4537, 3339, 4380, 3346, 4334, 3314, 4302, 3267, 4299, 3112)
 
 [node name="street_collider_15" type="StaticBody2D" parent="small_street_colliders"]
 position = Vector2(-1, 7649)
+collision_mask = 15
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="small_street_colliders/street_collider_15"]
 polygon = PackedVector2Array(4331, 3059, 4379, 3033, 4537, 3029, 4581, 3057, 4612, 3098, 4614, 3250, 4585, 3306, 4537, 3339, 4380, 3346, 4334, 3314, 4302, 3267, 4299, 3112)
 
 [node name="street_collider_16" type="StaticBody2D" parent="small_street_colliders"]
 position = Vector2(-5097, 7646)
+collision_mask = 15
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="small_street_colliders/street_collider_16"]
 polygon = PackedVector2Array(4331, 3059, 4379, 3033, 4537, 3029, 4581, 3057, 4612, 3098, 4614, 3250, 4585, 3306, 4537, 3339, 4380, 3346, 4334, 3314, 4302, 3267, 4299, 3112)
 
 [node name="street_collider_17" type="StaticBody2D" parent="small_street_colliders"]
 position = Vector2(5096, 7651)
+collision_mask = 15
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="small_street_colliders/street_collider_17"]
 polygon = PackedVector2Array(4331, 3059, 4379, 3033, 4537, 3029, 4581, 3057, 4612, 3098, 4614, 3250, 4585, 3306, 4537, 3339, 4380, 3346, 4334, 3314, 4302, 3267, 4299, 3112)
 
 [node name="street_collider_18" type="StaticBody2D" parent="small_street_colliders"]
 position = Vector2(10199, 7647)
+collision_mask = 15
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="small_street_colliders/street_collider_18"]
 polygon = PackedVector2Array(4331, 3059, 4379, 3033, 4537, 3029, 4581, 3057, 4612, 3098, 4614, 3250, 4585, 3306, 4537, 3339, 4380, 3346, 4334, 3314, 4302, 3267, 4299, 3112)
 
 [node name="street_collider_19" type="StaticBody2D" parent="small_street_colliders"]
 position = Vector2(15291, 7643)
+collision_mask = 15
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="small_street_colliders/street_collider_19"]
 polygon = PackedVector2Array(4331, 3059, 4379, 3033, 4537, 3029, 4581, 3057, 4612, 3098, 4614, 3250, 4585, 3306, 4537, 3339, 4380, 3346, 4334, 3314, 4302, 3267, 4299, 3112)
 
 [node name="street_collider_20" type="StaticBody2D" parent="small_street_colliders"]
 position = Vector2(20391, 7643)
+collision_mask = 15
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="small_street_colliders/street_collider_20"]
 polygon = PackedVector2Array(4331, 3059, 4379, 3033, 4537, 3029, 4581, 3057, 4612, 3098, 4614, 3250, 4585, 3306, 4537, 3339, 4380, 3346, 4334, 3314, 4302, 3267, 4299, 3112)
 
 [node name="street_collider_21" type="StaticBody2D" parent="small_street_colliders"]
 position = Vector2(25483, 7635)
+collision_mask = 15
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="small_street_colliders/street_collider_21"]
 polygon = PackedVector2Array(4331, 3059, 4379, 3033, 4537, 3029, 4581, 3057, 4612, 3098, 4614, 3250, 4585, 3306, 4537, 3339, 4380, 3346, 4334, 3314, 4302, 3267, 4299, 3112)
 
 [node name="boundary_north" type="StaticBody2D" parent="."]
+collision_mask = 15
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="boundary_north"]
 position = Vector2(14617.5, -1078)
@@ -2193,18 +2311,21 @@ shape = SubResource("RectangleShape2D_6grpb")
 
 [node name="boundary_south" type="StaticBody2D" parent="."]
 position = Vector2(90, 16127)
+collision_mask = 15
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="boundary_south"]
 position = Vector2(14617.5, -1078)
 shape = SubResource("RectangleShape2D_6grpb")
 
 [node name="boundary_west" type="StaticBody2D" parent="."]
+collision_mask = 15
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="boundary_west"]
 position = Vector2(-1176.5, 7017.5)
 shape = SubResource("RectangleShape2D_ismue")
 
 [node name="boundary_east" type="StaticBody2D" parent="."]
+collision_mask = 15
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="boundary_east"]
 position = Vector2(30457, 7425)

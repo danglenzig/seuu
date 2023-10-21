@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=3 uid="uid://d01un2resfa7u"]
+[gd_scene load_steps=36 format=3 uid="uid://d01un2resfa7u"]
 
 [ext_resource type="Texture2D" uid="uid://b5tceiboerc7t" path="res://Refactor01/CarStuff/car_01_sprite.png" id="1_jocuo"]
 [ext_resource type="Script" path="res://Refactor01/CarStuff/player_object.gd" id="1_mxsti"]
@@ -29,11 +29,9 @@
 [ext_resource type="Texture2D" uid="uid://dm5b3do0gx731" path="res://Refactor01/VFX/ElectricalExplosion_15.png" id="26_m3tyq"]
 [ext_resource type="Texture2D" uid="uid://cwuok3xpub5b2" path="res://Refactor01/VFX/ElectricalExplosion_16.png" id="27_qtpht"]
 [ext_resource type="Texture2D" uid="uid://cgvrdfvcn47al" path="res://Refactor01/CarStuff/car_01_shadow.png" id="28_63yx6"]
-[ext_resource type="Script" path="res://Refactor01/CarStuff/shadow_sprite_2d.gd" id="30_1rf06"]
-[ext_resource type="Script" path="res://Refactor01/weapons/weapon_01.gd" id="30_4ybrm"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_82rbg"]
-bounce = 0.4
+bounce = 0.33
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_rtox6"]
 radius = 21.0237
@@ -149,7 +147,6 @@ animations = [{
 
 [node name="player_object" type="RigidBody2D"]
 rotation = 1.5708
-collision_layer = 2
 physics_material_override = SubResource("PhysicsMaterial_82rbg")
 gravity_scale = 0.0
 script = ExtResource("1_mxsti")
@@ -194,25 +191,17 @@ animation = &"splode"
 frame = 15
 frame_progress = 1.0
 
-[node name="ShadowSprite" type="Sprite2D" parent="." node_paths=PackedStringArray("car_sprite")]
+[node name="ShadowSprite" type="Sprite2D" parent="."]
+visible = false
 z_index = -15
-position = Vector2(-1.79982, -11.9666)
-scale = Vector2(0.440716, 0.304974)
+position = Vector2(1, 0)
+scale = Vector2(0.36, 0.36)
 texture = ExtResource("28_63yx6")
-script = ExtResource("30_1rf06")
-ground_detect = 12.0
-car_sprite = NodePath("../CarSprite")
 
-[node name="rof_timer" type="Timer" parent="."]
-one_shot = true
+[node name="action_item_01" type="Node2D" parent="."]
 
-[node name="weapon_01" type="Node2D" parent="."]
-position = Vector2(-1.00018, -49)
-script = ExtResource("30_4ybrm")
-launch_power = 40.0
+[node name="action_item_02" type="Node2D" parent="."]
 
 [connection signal="left_action" from="." to="." method="_on_left_action"]
 [connection signal="right_action" from="." to="." method="_on_right_action"]
-[connection signal="area_exited" from="CarSprite/CarTrigger" to="ShadowSprite" method="_on_car_trigger_area_exited"]
 [connection signal="body_entered" from="CarSprite/CarTrigger" to="." method="_on_car_trigger_body_entered"]
-[connection signal="timeout" from="rof_timer" to="." method="_on_rof_timer_timeout"]

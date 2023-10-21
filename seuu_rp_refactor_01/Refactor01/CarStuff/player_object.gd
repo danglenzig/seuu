@@ -5,13 +5,21 @@ func print_to_console(the_string: String):
 	print(str(my_name, " says: ", the_string))
 ##################################################
 
-enum  ControlsMode {XONLY, XY}
+enum ControlsMode {XONLY, XY}
+
+
+
+var shot_caller
+
 @export var controls_mode: ControlsMode
 
 @export var boost_dampening: float = 0.5
 
+signal right_action
+signal left_action
+
 var my_sprite: Sprite2D
-var my_shadow: Sprite2D
+var my_rof_timer: Timer
 
 ## declare the car data
 var my_car_data: Resource
@@ -25,7 +33,8 @@ var my_xy_slerp_factor: float
 var my_boost_factor: float
 var my_braking_power: float
 var my_max_health: float
-var my_damage_per_hit: float
+var my_armor_rating: float
+var my_rate_of_fire: float
 
 ## status info
 var current_max_speed: float
@@ -34,11 +43,14 @@ var can_move: bool
 var can_rotate: bool
 var can_boost: bool
 var can_brake: bool
+var can_fire: bool
+
+var weapon_01
 
 func _ready():
-	
+	shot_caller = get_tree().get_current_scene()
 	my_sprite = get_node("CarSprite")
-	my_shadow = get_node("ShadowSprite")
+	my_rof_timer = get_node("rof_timer")
 	
 	## load the car data
 	my_car_data = load("res://Refactor01/InfoFiles/car_info_01.gd").new()
@@ -52,8 +64,8 @@ func _ready():
 	my_boost_factor = my_car_data.boost_factor
 	my_braking_power = my_car_data.braking_power
 	my_max_health = my_car_data.max_health
-	my_damage_per_hit = my_car_data.damage_per_hit
-	
+	my_armor_rating = my_car_data.armor_rating
+		
 	current_max_speed = my_start_max_speed
 	boost_dampening = 1 - boost_dampening
 	is_airborne = false
@@ -61,11 +73,14 @@ func _ready():
 	can_rotate = true
 	can_boost = true
 	can_brake = true
+	can_fire = true
 	
 	set_linear_damp(my_linear_drag)
 	
 	
-
+	weapon_01 = get_node("weapon_01")
+	my_rate_of_fire = weapon_01.rate_of_fire
+	my_rof_timer.set_wait_time(1 / my_rate_of_fire)
 
 
 
@@ -80,13 +95,10 @@ func _physics_process(delta):
 		handle_rb_boost()
 		
 	if controls_mode == ControlsMode.XONLY:
-		
 		handle_xonly_controls()
-		
-		
+		handle_action_input()
 		handle_rb_brakes()
-		
-	handle_shadow()
+	handle_explore_telemetry()
 	
 	
 	
@@ -118,9 +130,24 @@ func handle_boost_input():
 	return boost_input
 	
 func handle_action_input():
+	if Input.is_action_just_pressed("item_action_01"):
+		left_action.emit()
+	if Input.is_action_just_pressed("item_action_02"):
+		right_action.emit()
+
+func handle_left_action():
 	pass
-
-
+	
+func handle_right_action():
+	# here, check to see wh0at action is on RT,
+	# but for now, just...
+	fire_projectile()
+	
+func fire_projectile():
+	if can_fire:
+		can_fire = false
+		my_rof_timer.start()
+		weapon_01.activate()
 
 func handle_xonly_controls():
 	var current_speed = abs(get_linear_velocity().length())
@@ -141,10 +168,11 @@ func handle_xonly_controls():
 			else:
 				set_linear_damp(my_linear_drag)
 			xonly_steering()
-			
+	else:
+		## if i am airborne..
+		set_linear_damp(0)		
 func xonly_steering():
 	var steer_input: float = Input.get_axis("player_move_left", "player_move_right")
-	print_to_console(str(steer_input))
 	var move_input: float = 0
 	if Input.is_action_pressed("go"):
 		move_input += 1
@@ -190,5 +218,32 @@ func handle_rb_boost():
 func handle_rb_brakes():
 	pass
 	
-func handle_shadow():
-	my_shadow.rotation = my_sprite.rotation
+
+
+func handle_explore_telemetry():
+	var my_speed = abs(get_linear_velocity().length())
+	my_speed *= 0.1
+	my_speed = snappedf(my_speed, 1.0)
+#	shot_caller.show_speed(my_speed)
+	
+func get_sprite_rotation():
+	var the_rot = my_sprite.rotation
+	return the_rot
+
+##########################
+
+
+func _on_left_action():
+	handle_left_action()
+
+
+func _on_right_action():
+	handle_right_action()
+
+
+func _on_car_trigger_body_entered(body):
+	pass
+
+
+func _on_rof_timer_timeout():
+	can_fire = true

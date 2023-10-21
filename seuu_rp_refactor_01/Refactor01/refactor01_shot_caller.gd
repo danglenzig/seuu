@@ -52,6 +52,8 @@ var hud_cutscene_dialog_panel: Panel
 var hud_cutscene_slide: Sprite2D
 var quest_menu_panel: Panel
 var controls_help_panel: Panel
+var dialog_portrait_right: Sprite2D
+var dialog_portrait_left: Sprite2D
 
 func _ready():
 	
@@ -66,12 +68,15 @@ func _ready():
 	hud_cutscene_slide = hud_cutscene_mode_panel.get_node("cutscene_slide")
 	quest_menu_panel = hud_canvas.get_node("QuestMenuPanel")
 	controls_help_panel = hud_canvas.get_node("ControlsHelp")
+	dialog_portrait_right = hud_cutscene_mode_panel.get_node("cutscene_dialog_portrait_right")
+	dialog_portrait_left = hud_cutscene_mode_panel.get_node("cutscene_dialog_portrait_left")
 	
 	hud_explore_mode_panel.visible = false
 	hud_race_mode_panel.visible = false
 	
 	hud_cutscene_mode_panel.visible = false
 	hud_cutscene_dialog_panel.visible = false
+	
 	
 	quest_menu_panel.visible = false
 	
@@ -153,6 +158,10 @@ func set_cutscene_dialog_text(the_string: String):
 	
 func set_cutscene_slide(the_texture: Texture):
 	hud_cutscene_slide.set_texture(the_texture)
+	
+func show_speed(the_string):
+	var speed_label = hud_explore_mode_panel.get_node("URLabel")
+	speed_label.set_text(the_string)
 
 	
 

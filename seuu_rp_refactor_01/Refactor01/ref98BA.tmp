@@ -179,7 +179,7 @@ text = "cutscene dialog text"
 
 [node name="cutscene_dialog_portrait_right" type="Sprite2D" parent="CanvasLayer/CutsceneModePanel"]
 z_index = 100
-position = Vector2(1008, 470)
+position = Vector2(1003, 466)
 rotation = 0.174533
 scale = Vector2(0.66, 0.66)
 texture = ExtResource("4_yrfrc")
@@ -192,6 +192,7 @@ scale = Vector2(0.66, 0.66)
 texture = ExtResource("5_fxauh")
 
 [node name="QuestMenuPanel" type="Panel" parent="CanvasLayer"]
+visible = false
 self_modulate = Color(1, 1, 1, 0.921569)
 offset_left = 123.0
 offset_top = 101.0
@@ -233,7 +234,7 @@ horizontal_alignment = 1
 autowrap_mode = 3
 
 [node name="ControlsHelp" type="Panel" parent="CanvasLayer"]
-self_modulate = Color(1, 1, 1, 0)
+visible = false
 offset_left = 18.0
 offset_top = 17.0
 offset_right = 334.0
@@ -251,11 +252,12 @@ theme_override_constants/shadow_offset_x = 2
 theme_override_constants/shadow_offset_y = 2
 theme_override_fonts/font = ExtResource("2_cfhqs")
 theme_override_font_sizes/font_size = 10
+text = "Move: Left-stick / WASD
+Boost: Right-trigger /Enter"
 
 [node name="ControlsHelpXOnly" type="Panel" parent="CanvasLayer/ControlsHelp"]
-layout_mode = 0
 offset_right = 316.0
-offset_bottom = 71.0
+offset_bottom = 56.0
 
 [node name="Label" type="Label" parent="CanvasLayer/ControlsHelp/ControlsHelpXOnly"]
 layout_mode = 0
@@ -269,7 +271,6 @@ theme_override_constants/shadow_offset_x = 2
 theme_override_constants/shadow_offset_y = 2
 theme_override_fonts/font = ExtResource("2_cfhqs")
 theme_override_font_sizes/font_size = 10
-text = "Go: Right-trigger
-Stop/Reverse: Left-trigger
-Steer: Left-stick
-Fire: A button"
+text = "Go: A button
+Stop/Reverse: B button
+Steer: Left-stick"
