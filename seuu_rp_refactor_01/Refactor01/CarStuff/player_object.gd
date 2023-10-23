@@ -45,8 +45,10 @@ var can_rotate: bool
 var can_boost: bool
 var can_brake: bool
 var can_fire: bool
+var is_trapable: bool = true
 
 var weapon_01
+var weapon_02
 
 func _ready():
 	shot_caller = get_tree().get_current_scene()
@@ -80,6 +82,7 @@ func _ready():
 	
 	
 	weapon_01 = get_node("weapon_01")
+	weapon_02 = get_node("weapon_02")
 	my_rate_of_fire = weapon_01.rate_of_fire
 	my_rof_timer.set_wait_time(1 / my_rate_of_fire)
 	
@@ -150,12 +153,17 @@ func handle_action_input():
 			right_action.emit()
 
 func handle_left_action():
-	pass
+	# here, check to see wh0at action is on LT,
+	# but for now, just...
+	drop_a_trap()
 	
 func handle_right_action():
 	# here, check to see wh0at action is on RT,
 	# but for now, just...
 	fire_projectile()
+	
+func drop_a_trap():
+	weapon_02.drop_a_trap()
 	
 func fire_projectile():
 	if can_fire:
@@ -284,3 +292,10 @@ func _on_car_trigger_body_entered(body):
 
 func _on_rof_timer_timeout():
 	can_fire = true
+
+
+func _on_car_trigger_area_entered(the_trap):
+	if the_trap.is_in_group("trap"):
+		if is_trapable:
+			the_trap.splode()
+		

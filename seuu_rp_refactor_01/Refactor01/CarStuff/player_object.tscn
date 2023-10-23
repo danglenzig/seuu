@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=3 uid="uid://d01un2resfa7u"]
+[gd_scene load_steps=39 format=3 uid="uid://d01un2resfa7u"]
 
 [ext_resource type="Texture2D" uid="uid://b5tceiboerc7t" path="res://Refactor01/CarStuff/car_01_sprite.png" id="1_jocuo"]
 [ext_resource type="Script" path="res://Refactor01/CarStuff/player_object.gd" id="1_mxsti"]
@@ -31,6 +31,7 @@
 [ext_resource type="Texture2D" uid="uid://cgvrdfvcn47al" path="res://Refactor01/CarStuff/car_01_shadow.png" id="28_63yx6"]
 [ext_resource type="Script" path="res://Refactor01/CarStuff/shadow_sprite_2d.gd" id="30_1rf06"]
 [ext_resource type="Script" path="res://Refactor01/weapons/weapon_01.gd" id="30_4ybrm"]
+[ext_resource type="Script" path="res://Refactor01/weapons/weapon_02.gd" id="32_bx3vy"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_82rbg"]
 bounce = 0.4
@@ -211,8 +212,13 @@ position = Vector2(-1.00018, -49)
 script = ExtResource("30_4ybrm")
 launch_power = 40.0
 
+[node name="weapon_02" type="Node2D" parent="."]
+script = ExtResource("32_bx3vy")
+launch_offset = 150.0
+
 [connection signal="left_action" from="." to="." method="_on_left_action"]
 [connection signal="right_action" from="." to="." method="_on_right_action"]
+[connection signal="area_entered" from="CarSprite/CarTrigger" to="." method="_on_car_trigger_area_entered"]
 [connection signal="area_exited" from="CarSprite/CarTrigger" to="ShadowSprite" method="_on_car_trigger_area_exited"]
 [connection signal="body_entered" from="CarSprite/CarTrigger" to="." method="_on_car_trigger_body_entered"]
 [connection signal="timeout" from="rof_timer" to="." method="_on_rof_timer_timeout"]

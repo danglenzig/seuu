@@ -235,9 +235,10 @@ self_modulate = Color(1, 1, 1, 0.92549)
 offset_left = 18.0
 offset_top = 17.0
 offset_right = 418.0
-offset_bottom = 108.0
+offset_bottom = 139.0
 
 [node name="ControlsHelpText" type="Label" parent="CanvasLayer/ControlsHelp"]
+visible = false
 layout_mode = 0
 offset_left = 16.0
 offset_top = 7.0
@@ -252,7 +253,8 @@ theme_override_font_sizes/font_size = 14
 text = "Go: Right-trigger
 Stop/Reverse: Left-trigger
 Steer: Left-stick
-Fire: A button"
+Fire: A button
+Trap: B button"
 
 [node name="AltControlsHelpText" type="Label" parent="CanvasLayer/ControlsHelp"]
 layout_mode = 0
@@ -269,4 +271,5 @@ theme_override_font_sizes/font_size = 14
 text = "Go: A button
 Stop/Reverse: B button
 Steer: Left-stick
-Fire: Right-trigger"
+Fire: Right-trigger
+Trap: Left-trigger"

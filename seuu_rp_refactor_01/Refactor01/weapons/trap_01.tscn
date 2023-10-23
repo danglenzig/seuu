@@ -1,0 +1,103 @@
+[gd_scene load_steps=21 format=3 uid="uid://dw0dq10n1qt8v"]
+
+[ext_resource type="Script" path="res://Refactor01/weapons/trap_01.gd" id="1_5rlp6"]
+[ext_resource type="Texture2D" uid="uid://dqvewspqmh8n8" path="res://icon_alt.png" id="2_qgcvv"]
+[ext_resource type="Texture2D" uid="uid://d1gk4t774nj30" path="res://Refactor01/VFX/ElectricalExplosion_1.png" id="3_886st"]
+[ext_resource type="Texture2D" uid="uid://c6a1hbyuv3phb" path="res://Refactor01/VFX/ElectricalExplosion_2.png" id="4_2ntw0"]
+[ext_resource type="Texture2D" uid="uid://b2papp4blafek" path="res://Refactor01/VFX/ElectricalExplosion_3.png" id="5_lws5n"]
+[ext_resource type="Texture2D" uid="uid://c6dsk4doyugtj" path="res://Refactor01/VFX/ElectricalExplosion_4.png" id="6_mon16"]
+[ext_resource type="Texture2D" uid="uid://dbylfe5tdp2s5" path="res://Refactor01/VFX/ElectricalExplosion_5.png" id="7_xewng"]
+[ext_resource type="Texture2D" uid="uid://rivphrgbkwqp" path="res://Refactor01/VFX/ElectricalExplosion_6.png" id="8_lealq"]
+[ext_resource type="Texture2D" uid="uid://c6gkdhsb372qs" path="res://Refactor01/VFX/ElectricalExplosion_7.png" id="9_8uvss"]
+[ext_resource type="Texture2D" uid="uid://bhxo3ihpc4wnr" path="res://Refactor01/VFX/ElectricalExplosion_8.png" id="10_6h700"]
+[ext_resource type="Texture2D" uid="uid://dyi2gq5lbm6tk" path="res://Refactor01/VFX/ElectricalExplosion_9.png" id="11_i33xs"]
+[ext_resource type="Texture2D" uid="uid://b0g16tmbpe0p0" path="res://Refactor01/VFX/ElectricalExplosion_10.png" id="12_4vfqd"]
+[ext_resource type="Texture2D" uid="uid://dgpr02x6dec8v" path="res://Refactor01/VFX/ElectricalExplosion_11.png" id="13_x6pub"]
+[ext_resource type="Texture2D" uid="uid://kwwjloxwvmto" path="res://Refactor01/VFX/ElectricalExplosion_12.png" id="14_2u0so"]
+[ext_resource type="Texture2D" uid="uid://c0lnhpvgl6klm" path="res://Refactor01/VFX/ElectricalExplosion_13.png" id="15_mylhu"]
+[ext_resource type="Texture2D" uid="uid://bb4ff7fd40r1s" path="res://Refactor01/VFX/ElectricalExplosion_14.png" id="16_uanyl"]
+[ext_resource type="Texture2D" uid="uid://dm5b3do0gx731" path="res://Refactor01/VFX/ElectricalExplosion_15.png" id="17_0jnpu"]
+[ext_resource type="Texture2D" uid="uid://cwuok3xpub5b2" path="res://Refactor01/VFX/ElectricalExplosion_16.png" id="18_uipe1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_chku3"]
+size = Vector2(142, 143)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pk5bl"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_886st")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_2ntw0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_lws5n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_mon16")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_xewng")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_lealq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_8uvss")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_6h700")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_i33xs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_4vfqd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_x6pub")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_2u0so")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_mylhu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_uanyl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_0jnpu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_uipe1")
+}],
+"loop": false,
+"name": &"splode",
+"speed": 40.0
+}]
+
+[node name="trap_01" type="Area2D" node_paths=PackedStringArray("splode_vfx", "die_timer") groups=["trap"]]
+script = ExtResource("1_5rlp6")
+splode_vfx = NodePath("splode_vfx")
+die_timer = NodePath("die_timer")
+trap_lifetime = 10.0
+splode_on_timeout = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_chku3")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+self_modulate = Color(1, 0, 0, 1)
+texture = ExtResource("2_qgcvv")
+
+[node name="splode_vfx" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_pk5bl")
+animation = &"splode"
+
+[node name="die_timer" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="animation_finished" from="splode_vfx" to="." method="_on_splode_vfx_animation_finished"]
+[connection signal="timeout" from="die_timer" to="." method="_on_die_timer_timeout"]

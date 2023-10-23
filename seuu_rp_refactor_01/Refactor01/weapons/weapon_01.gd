@@ -11,6 +11,7 @@ var vehicle_sprite
 var my_projectile
 @export var launch_power: float = 30
 @export var rate_of_fire: float = 4
+@export var weapon_name: String = "Basic Projectile"
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://dvkxv2ny2tfdj"]
+
+[ext_resource type="Script" path="res://Refactor01/CarStuff/dev_car.gd" id="1_ojfvd"]
+[ext_resource type="Texture2D" uid="uid://b5tceiboerc7t" path="res://Refactor01/CarStuff/car_01_sprite.png" id="2_ijaed"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_82rbg"]
+bounce = 0.4
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_rtox6"]
+radius = 21.0237
+
+[node name="dev_car" type="RigidBody2D" node_paths=PackedStringArray("my_sprite")]
+rotation = 1.5708
+collision_layer = 2
+physics_material_override = SubResource("PhysicsMaterial_82rbg")
+gravity_scale = 0.0
+script = ExtResource("1_ojfvd")
+my_sprite = NodePath("CarSprite")
+
+[node name="RBCollisionCircle" type="CollisionShape2D" parent="."]
+position = Vector2(-2.57492e-05, -7)
+shape = SubResource("CircleShape2D_rtox6")
+
+[node name="CarSprite" type="Sprite2D" parent="."]
+position = Vector2(0, -12.4032)
+scale = Vector2(0.4, 0.274)
+texture = ExtResource("2_ijaed")

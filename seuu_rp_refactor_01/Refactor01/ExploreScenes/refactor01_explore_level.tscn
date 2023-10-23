@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://clsnmplpywj7g"]
+[gd_scene load_steps=9 format=3 uid="uid://clsnmplpywj7g"]
 
 [ext_resource type="Script" path="res://Refactor01/ExploreScenes/refactor01_explore_level.gd" id="1_2e4ma"]
 [ext_resource type="PackedScene" uid="uid://tlfpk2gax8wh" path="res://Refactor01/ExploreScenes/explore_mode_grid.tscn" id="2_sm4gb"]
@@ -11,6 +11,9 @@ size = Vector2(152, 2375)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0u7qy"]
 size = Vector2(2353, 54)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lrpbo"]
+size = Vector2(136, 79)
 
 [node name="refactor01_explore_level" type="Node2D" node_paths=PackedStringArray("follow_cam", "player_object", "player_start")]
 script = ExtResource("1_2e4ma")
@@ -36,89 +39,768 @@ limit_smoothed = true
 position_smoothing_enabled = true
 position_smoothing_speed = 20.0
 
-[node name="eastbound_ramp" type="Area2D" parent="." groups=["eastbound_ramp"]]
+[node name="ramps" type="Node2D" parent="."]
+
+[node name="eastbound_ramp" type="Area2D" parent="ramps" groups=["ramp"]]
 position = Vector2(8864, 11296)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="eastbound_ramp"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ramps/eastbound_ramp"]
 position = Vector2(75, 97)
 shape = SubResource("RectangleShape2D_qj0ak")
 
-[node name="sprites" type="Node2D" parent="eastbound_ramp"]
+[node name="sprites" type="Node2D" parent="ramps/eastbound_ramp"]
 position = Vector2(90, -376)
 
-[node name="Sprite2D" type="Sprite2D" parent="eastbound_ramp/sprites"]
+[node name="Sprite2D" type="Sprite2D" parent="ramps/eastbound_ramp/sprites"]
 z_index = -500
 position = Vector2(-18.999, 486)
 scale = Vector2(0.415228, 2.45798)
 texture = ExtResource("4_mc4fd")
 
-[node name="Sprite2D2" type="Sprite2D" parent="eastbound_ramp/sprites"]
+[node name="Sprite2D2" type="Sprite2D" parent="ramps/eastbound_ramp/sprites"]
 position = Vector2(-15, 790)
 scale = Vector2(0.15, 0.33)
 texture = ExtResource("5_31gcn")
 
-[node name="Sprite2D3" type="Sprite2D" parent="eastbound_ramp/sprites"]
+[node name="Sprite2D3" type="Sprite2D" parent="ramps/eastbound_ramp/sprites"]
 position = Vector2(-21, 592)
 scale = Vector2(0.15, 0.33)
 texture = ExtResource("5_31gcn")
 
-[node name="Sprite2D4" type="Sprite2D" parent="eastbound_ramp/sprites"]
+[node name="Sprite2D4" type="Sprite2D" parent="ramps/eastbound_ramp/sprites"]
 position = Vector2(-19, 983)
 scale = Vector2(0.15, 0.33)
 texture = ExtResource("5_31gcn")
 
-[node name="Sprite2D5" type="Sprite2D" parent="eastbound_ramp/sprites"]
+[node name="Sprite2D5" type="Sprite2D" parent="ramps/eastbound_ramp/sprites"]
 position = Vector2(-14.6992, 1384.6)
 scale = Vector2(0.15, 0.33)
 texture = ExtResource("5_31gcn")
 
-[node name="Sprite2D6" type="Sprite2D" parent="eastbound_ramp/sprites"]
+[node name="Sprite2D6" type="Sprite2D" parent="ramps/eastbound_ramp/sprites"]
 position = Vector2(-20.6992, 1186.6)
 scale = Vector2(0.15, 0.33)
 texture = ExtResource("5_31gcn")
 
-[node name="Sprite2D7" type="Sprite2D" parent="eastbound_ramp/sprites"]
+[node name="Sprite2D7" type="Sprite2D" parent="ramps/eastbound_ramp/sprites"]
 position = Vector2(-18.6992, 1577.6)
 scale = Vector2(0.15, 0.33)
 texture = ExtResource("5_31gcn")
 
-[node name="Sprite2D8" type="Sprite2D" parent="eastbound_ramp/sprites"]
+[node name="Sprite2D8" type="Sprite2D" parent="ramps/eastbound_ramp/sprites"]
 position = Vector2(-20.6992, -391.4)
 scale = Vector2(0.15, 0.33)
 texture = ExtResource("5_31gcn")
 
-[node name="Sprite2D9" type="Sprite2D" parent="eastbound_ramp/sprites"]
+[node name="Sprite2D9" type="Sprite2D" parent="ramps/eastbound_ramp/sprites"]
 position = Vector2(-26.6992, -589.4)
 scale = Vector2(0.15, 0.33)
 texture = ExtResource("5_31gcn")
 
-[node name="Sprite2D10" type="Sprite2D" parent="eastbound_ramp/sprites"]
+[node name="Sprite2D10" type="Sprite2D" parent="ramps/eastbound_ramp/sprites"]
 position = Vector2(-24.6992, -198.4)
 scale = Vector2(0.15, 0.33)
 texture = ExtResource("5_31gcn")
 
-[node name="Sprite2D11" type="Sprite2D" parent="eastbound_ramp/sprites"]
+[node name="Sprite2D11" type="Sprite2D" parent="ramps/eastbound_ramp/sprites"]
 position = Vector2(-20.3984, 203.199)
 scale = Vector2(0.15, 0.33)
 texture = ExtResource("5_31gcn")
 
-[node name="Sprite2D12" type="Sprite2D" parent="eastbound_ramp/sprites"]
+[node name="Sprite2D12" type="Sprite2D" parent="ramps/eastbound_ramp/sprites"]
 position = Vector2(-26.3984, 5.19922)
 scale = Vector2(0.15, 0.33)
 texture = ExtResource("5_31gcn")
 
-[node name="Sprite2D13" type="Sprite2D" parent="eastbound_ramp/sprites"]
+[node name="Sprite2D13" type="Sprite2D" parent="ramps/eastbound_ramp/sprites"]
 position = Vector2(-24.3984, 396.199)
 scale = Vector2(0.15, 0.33)
 texture = ExtResource("5_31gcn")
 
-[node name="StaticBody2D" type="StaticBody2D" parent="eastbound_ramp"]
+[node name="StaticBody2D" type="StaticBody2D" parent="ramps/eastbound_ramp"]
 position = Vector2(59, 98)
 collision_layer = 3
 collision_mask = 3
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="eastbound_ramp/StaticBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ramps/eastbound_ramp/StaticBody2D"]
 position = Vector2(43, -11.5)
 rotation = 1.5708
 shape = SubResource("RectangleShape2D_0u7qy")
 one_way_collision = true
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="ramps/eastbound_ramp/StaticBody2D"]
+position = Vector2(13, -1135.5)
+shape = SubResource("RectangleShape2D_lrpbo")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="ramps/eastbound_ramp/StaticBody2D"]
+position = Vector2(26, 1143)
+shape = SubResource("RectangleShape2D_lrpbo")
+
+[node name="westbound_ramp" type="Area2D" parent="ramps" groups=["ramp"]]
+position = Vector2(10285, 7842)
+rotation = -3.14159
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ramps/westbound_ramp"]
+position = Vector2(75, 97)
+shape = SubResource("RectangleShape2D_qj0ak")
+
+[node name="sprites" type="Node2D" parent="ramps/westbound_ramp"]
+position = Vector2(90, -376)
+
+[node name="Sprite2D" type="Sprite2D" parent="ramps/westbound_ramp/sprites"]
+z_index = -500
+position = Vector2(-18.999, 486)
+scale = Vector2(0.415228, 2.45798)
+texture = ExtResource("4_mc4fd")
+
+[node name="Sprite2D2" type="Sprite2D" parent="ramps/westbound_ramp/sprites"]
+position = Vector2(-15, 790)
+scale = Vector2(0.15, 0.33)
+texture = ExtResource("5_31gcn")
+
+[node name="Sprite2D3" type="Sprite2D" parent="ramps/westbound_ramp/sprites"]
+position = Vector2(-21, 592)
+scale = Vector2(0.15, 0.33)
+texture = ExtResource("5_31gcn")
+
+[node name="Sprite2D4" type="Sprite2D" parent="ramps/westbound_ramp/sprites"]
+position = Vector2(-19, 983)
+scale = Vector2(0.15, 0.33)
+texture = ExtResource("5_31gcn")
+
+[node name="Sprite2D5" type="Sprite2D" parent="ramps/westbound_ramp/sprites"]
+position = Vector2(-14.6992, 1384.6)
+scale = Vector2(0.15, 0.33)
+texture = ExtResource("5_31gcn")
+
+[node name="Sprite2D6" type="Sprite2D" parent="ramps/westbound_ramp/sprites"]
+position = Vector2(-20.6992, 1186.6)
+scale = Vector2(0.15, 0.33)
+texture = ExtResource("5_31gcn")
+
+[node name="Sprite2D7" type="Sprite2D" parent="ramps/westbound_ramp/sprites"]
+position = Vector2(-18.6992, 1577.6)
+scale = Vector2(0.15, 0.33)
+texture = ExtResource("5_31gcn")
+
+[node name="Sprite2D8" type="Sprite2D" parent="ramps/westbound_ramp/sprites"]
+position = Vector2(-20.6992, -391.4)
+scale = Vector2(0.15, 0.33)
+texture = ExtResource("5_31gcn")
+
+[node name="Sprite2D9" type="Sprite2D" parent="ramps/westbound_ramp/sprites"]
+position = Vector2(-26.6992, -589.4)
+scale = Vector2(0.15, 0.33)
+texture = ExtResource("5_31gcn")
+
+[node name="Sprite2D10" type="Sprite2D" parent="ramps/westbound_ramp/sprites"]
+position = Vector2(-24.6992, -198.4)
+scale = Vector2(0.15, 0.33)
+texture = ExtResource("5_31gcn")
+
+[node name="Sprite2D11" type="Sprite2D" parent="ramps/westbound_ramp/sprites"]
+position = Vector2(-20.3984, 203.199)
+scale = Vector2(0.15, 0.33)
+texture = ExtResource("5_31gcn")
+
+[node name="Sprite2D12" type="Sprite2D" parent="ramps/westbound_ramp/sprites"]
+position = Vector2(-26.3984, 5.19922)
+scale = Vector2(0.15, 0.33)
+texture = ExtResource("5_31gcn")
+
+[node name="Sprite2D13" type="Sprite2D" parent="ramps/westbound_ramp/sprites"]
+position = Vector2(-24.3984, 396.199)
+scale = Vector2(0.15, 0.33)
+texture = ExtResource("5_31gcn")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="ramps/westbound_ramp"]
+position = Vector2(59, 98)
+collision_layer = 3
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ramps/westbound_ramp/StaticBody2D"]
+position = Vector2(43, -11.5)
+rotation = 1.5708
+shape = SubResource("RectangleShape2D_0u7qy")
+one_way_collision = true
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="ramps/westbound_ramp/StaticBody2D"]
+position = Vector2(13, -1135.5)
+shape = SubResource("RectangleShape2D_lrpbo")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="ramps/westbound_ramp/StaticBody2D"]
+position = Vector2(26, 1143)
+shape = SubResource("RectangleShape2D_lrpbo")
+
+[node name="eastbound_ramp2" type="Area2D" parent="ramps" groups=["ramp"]]
+position = Vector2(13932, 7651)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ramps/eastbound_ramp2"]
+position = Vector2(75, 97)
+shape = SubResource("RectangleShape2D_qj0ak")
+
+[node name="sprites" type="Node2D" parent="ramps/eastbound_ramp2"]
+position = Vector2(90, -376)
+
+[node name="Sprite2D" type="Sprite2D" parent="ramps/eastbound_ramp2/sprites"]
+z_index = -500
+position = Vector2(-18.999, 486)
+scale = Vector2(0.415228, 2.45798)
+texture = ExtResource("4_mc4fd")
+
+[node name="Sprite2D2" type="Sprite2D" parent="ramps/eastbound_ramp2/sprites"]
+position = Vector2(-15, 790)
+scale = Vector2(0.15, 0.33)
+texture = ExtResource("5_31gcn")
+
+[node name="Sprite2D3" type="Sprite2D" parent="ramps/eastbound_ramp2/sprites"]
+position = Vector2(-21, 592)
+scale = Vector2(0.15, 0.33)
+texture = ExtResource("5_31gcn")
+
+[node name="Sprite2D4" type="Sprite2D" parent="ramps/eastbound_ramp2/sprites"]
+position = Vector2(-19, 983)
+scale = Vector2(0.15, 0.33)
+texture = ExtResource("5_31gcn")
+
+[node name="Sprite2D5" type="Sprite2D" parent="ramps/eastbound_ramp2/sprites"]
+position = Vector2(-14.6992, 1384.6)
+scale = Vector2(0.15, 0.33)
+texture = ExtResource("5_31gcn")
+
+[node name="Sprite2D6" type="Sprite2D" parent="ramps/eastbound_ramp2/sprites"]
+position = Vector2(-20.6992, 1186.6)
+scale = Vector2(0.15, 0.33)
+texture = ExtResource("5_31gcn")
+
+[node name="Sprite2D7" type="Sprite2D" parent="ramps/eastbound_ramp2/sprites"]
+position = Vector2(-18.6992, 1577.6)
+scale = Vector2(0.15, 0.33)
+texture = ExtResource("5_31gcn")
+
+[node name="Sprite2D8" type="Sprite2D" parent="ramps/eastbound_ramp2/sprites"]
+position = Vector2(-20.6992, -391.4)
+scale = Vector2(0.15, 0.33)
+texture = ExtResource("5_31gcn")
+
+[node name="Sprite2D9" type="Sprite2D" parent="ramps/eastbound_ramp2/sprites"]
+position = Vector2(-26.6992, -589.4)
+scale = Vector2(0.15, 0.33)
+texture = ExtResource("5_31gcn")
+
+[node name="Sprite2D10" type="Sprite2D" parent="ramps/eastbound_ramp2/sprites"]
+position = Vector2(-24.6992, -198.4)
+scale = Vector2(0.15, 0.33)
+texture = ExtResource("5_31gcn")
+
+[node name="Sprite2D11" type="Sprite2D" parent="ramps/eastbound_ramp2/sprites"]
+position = Vector2(-20.3984, 203.199)
+scale = Vector2(0.15, 0.33)
+texture = ExtResource("5_31gcn")
+
+[node name="Sprite2D12" type="Sprite2D" parent="ramps/eastbound_ramp2/sprites"]
+position = Vector2(-26.3984, 5.19922)
+scale = Vector2(0.15, 0.33)
+texture = ExtResource("5_31gcn")
+
+[node name="Sprite2D13" type="Sprite2D" parent="ramps/eastbound_ramp2/sprites"]
+position = Vector2(-24.3984, 396.199)
+scale = Vector2(0.15, 0.33)
+texture = ExtResource("5_31gcn")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="ramps/eastbound_ramp2"]
+position = Vector2(59, 98)
+collision_layer = 3
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ramps/eastbound_ramp2/StaticBody2D"]
+position = Vector2(43, -11.5)
+rotation = 1.5708
+shape = SubResource("RectangleShape2D_0u7qy")
+one_way_collision = true
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="ramps/eastbound_ramp2/StaticBody2D"]
+position = Vector2(13, -1135.5)
+shape = SubResource("RectangleShape2D_lrpbo")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="ramps/eastbound_ramp2/StaticBody2D"]
+position = Vector2(26, 1143)
+shape = SubResource("RectangleShape2D_lrpbo")
+
+[node name="westbound_ramp2" type="Area2D" parent="ramps" groups=["ramp"]]
+position = Vector2(15353, 4197)
+rotation = -3.14159
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ramps/westbound_ramp2"]
+position = Vector2(75, 97)
+shape = SubResource("RectangleShape2D_qj0ak")
+
+[node name="sprites" type="Node2D" parent="ramps/westbound_ramp2"]
+position = Vector2(90, -376)
+
+[node name="Sprite2D" type="Sprite2D" parent="ramps/westbound_ramp2/sprites"]
+z_index = -500
+position = Vector2(-18.999, 486)
+scale = Vector2(0.415228, 2.45798)
+texture = ExtResource("4_mc4fd")
+
+[node name="Sprite2D2" type="Sprite2D" parent="ramps/westbound_ramp2/sprites"]
+position = Vector2(-15, 790)
+scale = Vector2(0.15, 0.33)
+texture = ExtResource("5_31gcn")
+
+[node name="Sprite2D3" type="Sprite2D" parent="ramps/westbound_ramp2/sprites"]
+position = Vector2(-21, 592)
+scale = Vector2(0.15, 0.33)
+texture = ExtResource("5_31gcn")
+
+[node name="Sprite2D4" type="Sprite2D" parent="ramps/westbound_ramp2/sprites"]
+position = Vector2(-19, 983)
+scale = Vector2(0.15, 0.33)
+texture = ExtResource("5_31gcn")
+
+[node name="Sprite2D5" type="Sprite2D" parent="ramps/westbound_ramp2/sprites"]
+position = Vector2(-14.6992, 1384.6)
+scale = Vector2(0.15, 0.33)
+texture = ExtResource("5_31gcn")
+
+[node name="Sprite2D6" type="Sprite2D" parent="ramps/westbound_ramp2/sprites"]
+position = Vector2(-20.6992, 1186.6)
+scale = Vector2(0.15, 0.33)
+texture = ExtResource("5_31gcn")
+
+[node name="Sprite2D7" type="Sprite2D" parent="ramps/westbound_ramp2/sprites"]
+position = Vector2(-18.6992, 1577.6)
+scale = Vector2(0.15, 0.33)
+texture = ExtResource("5_31gcn")
+
+[node name="Sprite2D8" type="Sprite2D" parent="ramps/westbound_ramp2/sprites"]
+position = Vector2(-20.6992, -391.4)
+scale = Vector2(0.15, 0.33)
+texture = ExtResource("5_31gcn")
+
+[node name="Sprite2D9" type="Sprite2D" parent="ramps/westbound_ramp2/sprites"]
+position = Vector2(-26.6992, -589.4)
+scale = Vector2(0.15, 0.33)
+texture = ExtResource("5_31gcn")
+
+[node name="Sprite2D10" type="Sprite2D" parent="ramps/westbound_ramp2/sprites"]
+position = Vector2(-24.6992, -198.4)
+scale = Vector2(0.15, 0.33)
+texture = ExtResource("5_31gcn")
+
+[node name="Sprite2D11" type="Sprite2D" parent="ramps/westbound_ramp2/sprites"]
+position = Vector2(-20.3984, 203.199)
+scale = Vector2(0.15, 0.33)
+texture = ExtResource("5_31gcn")
+
+[node name="Sprite2D12" type="Sprite2D" parent="ramps/westbound_ramp2/sprites"]
+position = Vector2(-26.3984, 5.19922)
+scale = Vector2(0.15, 0.33)
+texture = ExtResource("5_31gcn")
+
+[node name="Sprite2D13" type="Sprite2D" parent="ramps/westbound_ramp2/sprites"]
+position = Vector2(-24.3984, 396.199)
+scale = Vector2(0.15, 0.33)
+texture = ExtResource("5_31gcn")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="ramps/westbound_ramp2"]
+position = Vector2(59, 98)
+collision_layer = 3
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ramps/westbound_ramp2/StaticBody2D"]
+position = Vector2(43, -11.5)
+rotation = 1.5708
+shape = SubResource("RectangleShape2D_0u7qy")
+one_way_collision = true
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="ramps/westbound_ramp2/StaticBody2D"]
+position = Vector2(13, -1135.5)
+shape = SubResource("RectangleShape2D_lrpbo")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="ramps/westbound_ramp2/StaticBody2D"]
+position = Vector2(26, 1143)
+shape = SubResource("RectangleShape2D_lrpbo")
+
+[node name="eastbound_ramp3" type="Area2D" parent="ramps" groups=["ramp"]]
+position = Vector2(19089, 10058)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ramps/eastbound_ramp3"]
+position = Vector2(75, 97)
+shape = SubResource("RectangleShape2D_qj0ak")
+
+[node name="sprites" type="Node2D" parent="ramps/eastbound_ramp3"]
+position = Vector2(90, -376)
+
+[node name="Sprite2D" type="Sprite2D" parent="ramps/eastbound_ramp3/sprites"]
+z_index = -500
+position = Vector2(-18.999, 486)
+scale = Vector2(0.415228, 2.45798)
+texture = ExtResource("4_mc4fd")
+
+[node name="Sprite2D2" type="Sprite2D" parent="ramps/eastbound_ramp3/sprites"]
+position = Vector2(-15, 790)
+scale = Vector2(0.15, 0.33)
+texture = ExtResource("5_31gcn")
+
+[node name="Sprite2D3" type="Sprite2D" parent="ramps/eastbound_ramp3/sprites"]
+position = Vector2(-21, 592)
+scale = Vector2(0.15, 0.33)
+texture = ExtResource("5_31gcn")
+
+[node name="Sprite2D4" type="Sprite2D" parent="ramps/eastbound_ramp3/sprites"]
+position = Vector2(-19, 983)
+scale = Vector2(0.15, 0.33)
+texture = ExtResource("5_31gcn")
+
+[node name="Sprite2D5" type="Sprite2D" parent="ramps/eastbound_ramp3/sprites"]
+position = Vector2(-14.6992, 1384.6)
+scale = Vector2(0.15, 0.33)
+texture = ExtResource("5_31gcn")
+
+[node name="Sprite2D6" type="Sprite2D" parent="ramps/eastbound_ramp3/sprites"]
+position = Vector2(-20.6992, 1186.6)
+scale = Vector2(0.15, 0.33)
+texture = ExtResource("5_31gcn")
+
+[node name="Sprite2D7" type="Sprite2D" parent="ramps/eastbound_ramp3/sprites"]
+position = Vector2(-18.6992, 1577.6)
+scale = Vector2(0.15, 0.33)
+texture = ExtResource("5_31gcn")
+
+[node name="Sprite2D8" type="Sprite2D" parent="ramps/eastbound_ramp3/sprites"]
+position = Vector2(-20.6992, -391.4)
+scale = Vector2(0.15, 0.33)
+texture = ExtResource("5_31gcn")
+
+[node name="Sprite2D9" type="Sprite2D" parent="ramps/eastbound_ramp3/sprites"]
+position = Vector2(-26.6992, -589.4)
+scale = Vector2(0.15, 0.33)
+texture = ExtResource("5_31gcn")
+
+[node name="Sprite2D10" type="Sprite2D" parent="ramps/eastbound_ramp3/sprites"]
+position = Vector2(-24.6992, -198.4)
+scale = Vector2(0.15, 0.33)
+texture = ExtResource("5_31gcn")
+
+[node name="Sprite2D11" type="Sprite2D" parent="ramps/eastbound_ramp3/sprites"]
+position = Vector2(-20.3984, 203.199)
+scale = Vector2(0.15, 0.33)
+texture = ExtResource("5_31gcn")
+
+[node name="Sprite2D12" type="Sprite2D" parent="ramps/eastbound_ramp3/sprites"]
+position = Vector2(-26.3984, 5.19922)
+scale = Vector2(0.15, 0.33)
+texture = ExtResource("5_31gcn")
+
+[node name="Sprite2D13" type="Sprite2D" parent="ramps/eastbound_ramp3/sprites"]
+position = Vector2(-24.3984, 396.199)
+scale = Vector2(0.15, 0.33)
+texture = ExtResource("5_31gcn")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="ramps/eastbound_ramp3"]
+position = Vector2(59, 98)
+collision_layer = 3
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ramps/eastbound_ramp3/StaticBody2D"]
+position = Vector2(43, -11.5)
+rotation = 1.5708
+shape = SubResource("RectangleShape2D_0u7qy")
+one_way_collision = true
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="ramps/eastbound_ramp3/StaticBody2D"]
+position = Vector2(13, -1135.5)
+shape = SubResource("RectangleShape2D_lrpbo")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="ramps/eastbound_ramp3/StaticBody2D"]
+position = Vector2(26, 1143)
+shape = SubResource("RectangleShape2D_lrpbo")
+
+[node name="westbound_ramp3" type="Area2D" parent="ramps" groups=["ramp"]]
+position = Vector2(20510, 6604)
+rotation = -3.14159
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ramps/westbound_ramp3"]
+position = Vector2(75, 97)
+shape = SubResource("RectangleShape2D_qj0ak")
+
+[node name="sprites" type="Node2D" parent="ramps/westbound_ramp3"]
+position = Vector2(90, -376)
+
+[node name="Sprite2D" type="Sprite2D" parent="ramps/westbound_ramp3/sprites"]
+z_index = -500
+position = Vector2(-18.999, 486)
+scale = Vector2(0.415228, 2.45798)
+texture = ExtResource("4_mc4fd")
+
+[node name="Sprite2D2" type="Sprite2D" parent="ramps/westbound_ramp3/sprites"]
+position = Vector2(-15, 790)
+scale = Vector2(0.15, 0.33)
+texture = ExtResource("5_31gcn")
+
+[node name="Sprite2D3" type="Sprite2D" parent="ramps/westbound_ramp3/sprites"]
+position = Vector2(-21, 592)
+scale = Vector2(0.15, 0.33)
+texture = ExtResource("5_31gcn")
+
+[node name="Sprite2D4" type="Sprite2D" parent="ramps/westbound_ramp3/sprites"]
+position = Vector2(-19, 983)
+scale = Vector2(0.15, 0.33)
+texture = ExtResource("5_31gcn")
+
+[node name="Sprite2D5" type="Sprite2D" parent="ramps/westbound_ramp3/sprites"]
+position = Vector2(-14.6992, 1384.6)
+scale = Vector2(0.15, 0.33)
+texture = ExtResource("5_31gcn")
+
+[node name="Sprite2D6" type="Sprite2D" parent="ramps/westbound_ramp3/sprites"]
+position = Vector2(-20.6992, 1186.6)
+scale = Vector2(0.15, 0.33)
+texture = ExtResource("5_31gcn")
+
+[node name="Sprite2D7" type="Sprite2D" parent="ramps/westbound_ramp3/sprites"]
+position = Vector2(-18.6992, 1577.6)
+scale = Vector2(0.15, 0.33)
+texture = ExtResource("5_31gcn")
+
+[node name="Sprite2D8" type="Sprite2D" parent="ramps/westbound_ramp3/sprites"]
+position = Vector2(-20.6992, -391.4)
+scale = Vector2(0.15, 0.33)
+texture = ExtResource("5_31gcn")
+
+[node name="Sprite2D9" type="Sprite2D" parent="ramps/westbound_ramp3/sprites"]
+position = Vector2(-26.6992, -589.4)
+scale = Vector2(0.15, 0.33)
+texture = ExtResource("5_31gcn")
+
+[node name="Sprite2D10" type="Sprite2D" parent="ramps/westbound_ramp3/sprites"]
+position = Vector2(-24.6992, -198.4)
+scale = Vector2(0.15, 0.33)
+texture = ExtResource("5_31gcn")
+
+[node name="Sprite2D11" type="Sprite2D" parent="ramps/westbound_ramp3/sprites"]
+position = Vector2(-20.3984, 203.199)
+scale = Vector2(0.15, 0.33)
+texture = ExtResource("5_31gcn")
+
+[node name="Sprite2D12" type="Sprite2D" parent="ramps/westbound_ramp3/sprites"]
+position = Vector2(-26.3984, 5.19922)
+scale = Vector2(0.15, 0.33)
+texture = ExtResource("5_31gcn")
+
+[node name="Sprite2D13" type="Sprite2D" parent="ramps/westbound_ramp3/sprites"]
+position = Vector2(-24.3984, 396.199)
+scale = Vector2(0.15, 0.33)
+texture = ExtResource("5_31gcn")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="ramps/westbound_ramp3"]
+position = Vector2(59, 98)
+collision_layer = 3
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ramps/westbound_ramp3/StaticBody2D"]
+position = Vector2(43, -11.5)
+rotation = 1.5708
+shape = SubResource("RectangleShape2D_0u7qy")
+one_way_collision = true
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="ramps/westbound_ramp3/StaticBody2D"]
+position = Vector2(13, -1135.5)
+shape = SubResource("RectangleShape2D_lrpbo")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="ramps/westbound_ramp3/StaticBody2D"]
+position = Vector2(26, 1143)
+shape = SubResource("RectangleShape2D_lrpbo")
+
+[node name="eastbound_ramp4" type="Area2D" parent="ramps" groups=["ramp"]]
+position = Vector2(24157, 6413)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ramps/eastbound_ramp4"]
+position = Vector2(75, 97)
+shape = SubResource("RectangleShape2D_qj0ak")
+
+[node name="sprites" type="Node2D" parent="ramps/eastbound_ramp4"]
+position = Vector2(90, -376)
+
+[node name="Sprite2D" type="Sprite2D" parent="ramps/eastbound_ramp4/sprites"]
+z_index = -500
+position = Vector2(-18.999, 486)
+scale = Vector2(0.415228, 2.45798)
+texture = ExtResource("4_mc4fd")
+
+[node name="Sprite2D2" type="Sprite2D" parent="ramps/eastbound_ramp4/sprites"]
+position = Vector2(-15, 790)
+scale = Vector2(0.15, 0.33)
+texture = ExtResource("5_31gcn")
+
+[node name="Sprite2D3" type="Sprite2D" parent="ramps/eastbound_ramp4/sprites"]
+position = Vector2(-21, 592)
+scale = Vector2(0.15, 0.33)
+texture = ExtResource("5_31gcn")
+
+[node name="Sprite2D4" type="Sprite2D" parent="ramps/eastbound_ramp4/sprites"]
+position = Vector2(-19, 983)
+scale = Vector2(0.15, 0.33)
+texture = ExtResource("5_31gcn")
+
+[node name="Sprite2D5" type="Sprite2D" parent="ramps/eastbound_ramp4/sprites"]
+position = Vector2(-14.6992, 1384.6)
+scale = Vector2(0.15, 0.33)
+texture = ExtResource("5_31gcn")
+
+[node name="Sprite2D6" type="Sprite2D" parent="ramps/eastbound_ramp4/sprites"]
+position = Vector2(-20.6992, 1186.6)
+scale = Vector2(0.15, 0.33)
+texture = ExtResource("5_31gcn")
+
+[node name="Sprite2D7" type="Sprite2D" parent="ramps/eastbound_ramp4/sprites"]
+position = Vector2(-18.6992, 1577.6)
+scale = Vector2(0.15, 0.33)
+texture = ExtResource("5_31gcn")
+
+[node name="Sprite2D8" type="Sprite2D" parent="ramps/eastbound_ramp4/sprites"]
+position = Vector2(-20.6992, -391.4)
+scale = Vector2(0.15, 0.33)
+texture = ExtResource("5_31gcn")
+
+[node name="Sprite2D9" type="Sprite2D" parent="ramps/eastbound_ramp4/sprites"]
+position = Vector2(-26.6992, -589.4)
+scale = Vector2(0.15, 0.33)
+texture = ExtResource("5_31gcn")
+
+[node name="Sprite2D10" type="Sprite2D" parent="ramps/eastbound_ramp4/sprites"]
+position = Vector2(-24.6992, -198.4)
+scale = Vector2(0.15, 0.33)
+texture = ExtResource("5_31gcn")
+
+[node name="Sprite2D11" type="Sprite2D" parent="ramps/eastbound_ramp4/sprites"]
+position = Vector2(-20.3984, 203.199)
+scale = Vector2(0.15, 0.33)
+texture = ExtResource("5_31gcn")
+
+[node name="Sprite2D12" type="Sprite2D" parent="ramps/eastbound_ramp4/sprites"]
+position = Vector2(-26.3984, 5.19922)
+scale = Vector2(0.15, 0.33)
+texture = ExtResource("5_31gcn")
+
+[node name="Sprite2D13" type="Sprite2D" parent="ramps/eastbound_ramp4/sprites"]
+position = Vector2(-24.3984, 396.199)
+scale = Vector2(0.15, 0.33)
+texture = ExtResource("5_31gcn")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="ramps/eastbound_ramp4"]
+position = Vector2(59, 98)
+collision_layer = 3
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ramps/eastbound_ramp4/StaticBody2D"]
+position = Vector2(43, -11.5)
+rotation = 1.5708
+shape = SubResource("RectangleShape2D_0u7qy")
+one_way_collision = true
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="ramps/eastbound_ramp4/StaticBody2D"]
+position = Vector2(13, -1135.5)
+shape = SubResource("RectangleShape2D_lrpbo")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="ramps/eastbound_ramp4/StaticBody2D"]
+position = Vector2(26, 1143)
+shape = SubResource("RectangleShape2D_lrpbo")
+
+[node name="westbound_ramp4" type="Area2D" parent="ramps" groups=["ramp"]]
+position = Vector2(25578, 2959)
+rotation = -3.14159
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ramps/westbound_ramp4"]
+position = Vector2(75, 97)
+shape = SubResource("RectangleShape2D_qj0ak")
+
+[node name="sprites" type="Node2D" parent="ramps/westbound_ramp4"]
+position = Vector2(90, -376)
+
+[node name="Sprite2D" type="Sprite2D" parent="ramps/westbound_ramp4/sprites"]
+z_index = -500
+position = Vector2(-18.999, 486)
+scale = Vector2(0.415228, 2.45798)
+texture = ExtResource("4_mc4fd")
+
+[node name="Sprite2D2" type="Sprite2D" parent="ramps/westbound_ramp4/sprites"]
+position = Vector2(-15, 790)
+scale = Vector2(0.15, 0.33)
+texture = ExtResource("5_31gcn")
+
+[node name="Sprite2D3" type="Sprite2D" parent="ramps/westbound_ramp4/sprites"]
+position = Vector2(-21, 592)
+scale = Vector2(0.15, 0.33)
+texture = ExtResource("5_31gcn")
+
+[node name="Sprite2D4" type="Sprite2D" parent="ramps/westbound_ramp4/sprites"]
+position = Vector2(-19, 983)
+scale = Vector2(0.15, 0.33)
+texture = ExtResource("5_31gcn")
+
+[node name="Sprite2D5" type="Sprite2D" parent="ramps/westbound_ramp4/sprites"]
+position = Vector2(-14.6992, 1384.6)
+scale = Vector2(0.15, 0.33)
+texture = ExtResource("5_31gcn")
+
+[node name="Sprite2D6" type="Sprite2D" parent="ramps/westbound_ramp4/sprites"]
+position = Vector2(-20.6992, 1186.6)
+scale = Vector2(0.15, 0.33)
+texture = ExtResource("5_31gcn")
+
+[node name="Sprite2D7" type="Sprite2D" parent="ramps/westbound_ramp4/sprites"]
+position = Vector2(-18.6992, 1577.6)
+scale = Vector2(0.15, 0.33)
+texture = ExtResource("5_31gcn")
+
+[node name="Sprite2D8" type="Sprite2D" parent="ramps/westbound_ramp4/sprites"]
+position = Vector2(-20.6992, -391.4)
+scale = Vector2(0.15, 0.33)
+texture = ExtResource("5_31gcn")
+
+[node name="Sprite2D9" type="Sprite2D" parent="ramps/westbound_ramp4/sprites"]
+position = Vector2(-26.6992, -589.4)
+scale = Vector2(0.15, 0.33)
+texture = ExtResource("5_31gcn")
+
+[node name="Sprite2D10" type="Sprite2D" parent="ramps/westbound_ramp4/sprites"]
+position = Vector2(-24.6992, -198.4)
+scale = Vector2(0.15, 0.33)
+texture = ExtResource("5_31gcn")
+
+[node name="Sprite2D11" type="Sprite2D" parent="ramps/westbound_ramp4/sprites"]
+position = Vector2(-20.3984, 203.199)
+scale = Vector2(0.15, 0.33)
+texture = ExtResource("5_31gcn")
+
+[node name="Sprite2D12" type="Sprite2D" parent="ramps/westbound_ramp4/sprites"]
+position = Vector2(-26.3984, 5.19922)
+scale = Vector2(0.15, 0.33)
+texture = ExtResource("5_31gcn")
+
+[node name="Sprite2D13" type="Sprite2D" parent="ramps/westbound_ramp4/sprites"]
+position = Vector2(-24.3984, 396.199)
+scale = Vector2(0.15, 0.33)
+texture = ExtResource("5_31gcn")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="ramps/westbound_ramp4"]
+position = Vector2(59, 98)
+collision_layer = 3
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ramps/westbound_ramp4/StaticBody2D"]
+position = Vector2(43, -11.5)
+rotation = 1.5708
+shape = SubResource("RectangleShape2D_0u7qy")
+one_way_collision = true
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="ramps/westbound_ramp4/StaticBody2D"]
+position = Vector2(13, -1135.5)
+shape = SubResource("RectangleShape2D_lrpbo")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="ramps/westbound_ramp4/StaticBody2D"]
+position = Vector2(26, 1143)
+shape = SubResource("RectangleShape2D_lrpbo")

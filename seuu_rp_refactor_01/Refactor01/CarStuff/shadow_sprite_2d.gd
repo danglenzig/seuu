@@ -40,7 +40,6 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
-	print_to_console(str(visible))
 	rotation = car_sprite.rotation
 	if car_rb.is_airborne:
 		time_since_launch += delta
@@ -67,15 +66,7 @@ func handle_shadow():
 
 
 func _on_car_trigger_area_exited(area):
-	if area.is_in_group("eastbound_ramp"):
-		if car_rb.get_linear_velocity().x > 0:
-			handle_shadow()
-	elif area.is_in_group("westbound_ramp"):
-		if car_rb.get_linear_velocity().x < 0:
-			handle_shadow()
-	elif area.is_in_group("northbound_ramp"):
-		if car_rb.get_linear_velocity().y < 0:
-			handle_shadow()
-	elif area.is_in_group("southbound_ramp"):
-		if car_rb.get_linear_velocity().y > 0:
-			handle_shadow()
+	if area.is_in_group("ramp"):
+		handle_shadow()
+		
+	
