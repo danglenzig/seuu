@@ -75,14 +75,14 @@ animations = [{
 }],
 "loop": false,
 "name": &"splode",
-"speed": 40.0
+"speed": 30.0
 }]
 
 [node name="trap_01" type="Area2D" node_paths=PackedStringArray("splode_vfx", "die_timer") groups=["trap"]]
 script = ExtResource("1_5rlp6")
 splode_vfx = NodePath("splode_vfx")
 die_timer = NodePath("die_timer")
-trap_lifetime = 10.0
+trap_lifetime = 8.0
 splode_on_timeout = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

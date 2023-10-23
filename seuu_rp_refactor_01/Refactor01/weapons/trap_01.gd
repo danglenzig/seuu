@@ -17,6 +17,8 @@ func _process(delta):
 	pass
 	
 func splode():
+	var my_sprite = get_node("Sprite2D")
+	my_sprite.visible = false
 	splode_vfx.visible = true
 	splode_vfx.play()
 	
