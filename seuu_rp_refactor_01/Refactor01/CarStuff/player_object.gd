@@ -11,7 +11,8 @@ enum ControlsMode {XONLY, XY}
 
 var shot_caller
 
-@export var controls_mode: ControlsMode
+var controls_mode: ControlsMode = ControlsMode.XONLY
+@export var alt_controls: bool = false
 
 @export var boost_dampening: float = 0.5
 
@@ -81,7 +82,11 @@ func _ready():
 	weapon_01 = get_node("weapon_01")
 	my_rate_of_fire = weapon_01.rate_of_fire
 	my_rof_timer.set_wait_time(1 / my_rate_of_fire)
-
+	
+	if alt_controls == true:
+		shot_caller.set_alt_controls_help(true)
+	elif alt_controls == false:
+		shot_caller.set_alt_controls_help(false)
 
 
 func _process(delta):
@@ -95,7 +100,10 @@ func _physics_process(delta):
 		handle_rb_boost()
 		
 	if controls_mode == ControlsMode.XONLY:
-		handle_xonly_controls()
+		if alt_controls == false:
+			handle_xonly_controls()
+		elif alt_controls == true:
+			handle_alt_controls()
 		handle_action_input()
 		handle_rb_brakes()
 	handle_explore_telemetry()
@@ -130,10 +138,16 @@ func handle_boost_input():
 	return boost_input
 	
 func handle_action_input():
-	if Input.is_action_just_pressed("item_action_01"):
-		left_action.emit()
-	if Input.is_action_just_pressed("item_action_02"):
-		right_action.emit()
+	if alt_controls == false:
+		if Input.is_action_just_pressed("item_action_01"):
+			left_action.emit()
+		if Input.is_action_just_pressed("item_action_02"):
+			right_action.emit()
+	elif alt_controls == true:
+		if Input.is_action_just_pressed("alt_item_action_01"):
+			left_action.emit()
+		if Input.is_action_just_pressed("alt_item_action_02"):
+			right_action.emit()
 
 func handle_left_action():
 	pass
@@ -148,6 +162,29 @@ func fire_projectile():
 		can_fire = false
 		my_rof_timer.start()
 		weapon_01.activate()
+
+func handle_alt_controls():
+	var current_speed = abs(get_linear_velocity().length())
+	var move_force = 1 - (current_speed / current_max_speed)
+	move_force *= my_move_speed
+	if not is_airborne:
+		if can_move:
+			if Input.is_action_pressed("alt_go"):
+				set_linear_damp(my_linear_drag)
+				var current_rotation = my_sprite.rotation
+				var local_forward = Vector2(1,0).rotated(current_rotation)
+				self.apply_central_force(local_forward * move_force)
+			elif Input.is_action_pressed("alt_stop"):
+				set_linear_damp(my_linear_drag * my_braking_power)
+				var current_rotation = my_sprite.rotation
+				var local_forward = Vector2(1,0).rotated(current_rotation)
+				self.apply_central_force(local_forward * -move_force * 0.33)
+			else:
+				set_linear_damp(my_linear_drag)
+			xonly_steering()
+	else:
+		## if i am airborne..
+		set_linear_damp(0)
 
 func handle_xonly_controls():
 	var current_speed = abs(get_linear_velocity().length())

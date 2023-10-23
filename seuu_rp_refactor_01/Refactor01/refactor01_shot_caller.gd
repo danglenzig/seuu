@@ -52,6 +52,8 @@ var hud_cutscene_dialog_panel: Panel
 var hud_cutscene_slide: Sprite2D
 var quest_menu_panel: Panel
 var controls_help_panel: Panel
+var controls_help_label: Label
+var alt_controls_help_label: Label
 var dialog_portrait_right: Sprite2D
 var dialog_portrait_left: Sprite2D
 
@@ -67,9 +69,14 @@ func _ready():
 	hud_cutscene_dialog_panel = hud_cutscene_mode_panel.get_node("cutscene_dialog_panel")
 	hud_cutscene_slide = hud_cutscene_mode_panel.get_node("cutscene_slide")
 	quest_menu_panel = hud_canvas.get_node("QuestMenuPanel")
-	controls_help_panel = hud_canvas.get_node("ControlsHelp")
+	
 	dialog_portrait_right = hud_cutscene_mode_panel.get_node("cutscene_dialog_portrait_right")
 	dialog_portrait_left = hud_cutscene_mode_panel.get_node("cutscene_dialog_portrait_left")
+	
+	controls_help_panel = hud_canvas.get_node("ControlsHelp")
+	controls_help_label = controls_help_panel.get_node("ControlsHelpText")
+	alt_controls_help_label = controls_help_panel.get_node("AltControlsHelpText")
+	
 	
 	hud_explore_mode_panel.visible = false
 	hud_race_mode_panel.visible = false
@@ -162,6 +169,14 @@ func set_cutscene_slide(the_texture: Texture):
 func show_speed(the_string):
 	var speed_label = hud_explore_mode_panel.get_node("URLabel")
 	speed_label.set_text(the_string)
+	
+func set_alt_controls_help(the_bool):
+	if the_bool == true:
+		alt_controls_help_label.visible = true
+		controls_help_label.visible = false
+	else:
+		alt_controls_help_label.visible = false
+		controls_help_label.visible = true
 
 	
 
