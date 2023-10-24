@@ -1,0 +1,52 @@
+[gd_scene load_steps=4 format=3 uid="uid://qytivwow8ilw"]
+
+[ext_resource type="PackedScene" uid="uid://c8urud6lhpbpf" path="res://Refactor01/CarStuff/ai_car_01.tscn" id="1_5hqg4"]
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_bakry"]
+vertices = PackedVector2Array(452, 70, 637, 59, 838, 112, 889, 316, 844, 545, 541, 572, 279, 471, 270, 299, 329, 159)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3, 4, 5, 6, 7, 8)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(329, 159, 270, 299, 279, 471, 541, 572, 844, 545, 889, 316, 838, 112, 637, 59, 452, 70)])
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_6pyff"]
+radius = 159.138
+
+[node name="ai_lab" type="Node2D"]
+
+[node name="ai_car_01" parent="." node_paths=PackedStringArray("race_checkpoints") instance=ExtResource("1_5hqg4")]
+position = Vector2(391, 423)
+race_checkpoints = [NodePath("../track/checkpoint_01"), NodePath("../track/checkpoint_02"), NodePath("../track/checkpoint_03"), NodePath("../track/checkpoint_04"), NodePath("../track/checkpoint_05"), NodePath("../track/checkpoint_06"), NodePath("../track/checkpoint_07"), NodePath("../track/checkpoint_08")]
+
+[node name="track" type="Node2D" parent="."]
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="track"]
+navigation_polygon = SubResource("NavigationPolygon_bakry")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="track/NavigationRegion2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="track/NavigationRegion2D/StaticBody2D"]
+position = Vector2(572, 316)
+shape = SubResource("CircleShape2D_6pyff")
+
+[node name="checkpoint_01" type="Marker2D" parent="track"]
+position = Vector2(335, 255)
+
+[node name="checkpoint_02" type="Marker2D" parent="track"]
+position = Vector2(416, 172)
+
+[node name="checkpoint_03" type="Marker2D" parent="track"]
+position = Vector2(539, 115)
+
+[node name="checkpoint_04" type="Marker2D" parent="track"]
+position = Vector2(698, 123)
+
+[node name="checkpoint_05" type="Marker2D" parent="track"]
+position = Vector2(779, 204)
+
+[node name="checkpoint_06" type="Marker2D" parent="track"]
+position = Vector2(811, 323)
+
+[node name="checkpoint_07" type="Marker2D" parent="track"]
+position = Vector2(756, 437)
+
+[node name="checkpoint_08" type="Marker2D" parent="track"]
+position = Vector2(650, 513)

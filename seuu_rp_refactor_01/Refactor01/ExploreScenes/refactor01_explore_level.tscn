@@ -1,8 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://clsnmplpywj7g"]
+[gd_scene load_steps=11 format=3 uid="uid://clsnmplpywj7g"]
 
 [ext_resource type="Script" path="res://Refactor01/ExploreScenes/refactor01_explore_level.gd" id="1_2e4ma"]
 [ext_resource type="PackedScene" uid="uid://tlfpk2gax8wh" path="res://Refactor01/ExploreScenes/explore_mode_grid.tscn" id="2_sm4gb"]
 [ext_resource type="PackedScene" uid="uid://d01un2resfa7u" path="res://Refactor01/CarStuff/player_object.tscn" id="3_0af1l"]
+[ext_resource type="PackedScene" uid="uid://byv3k8qhvbefq" path="res://Refactor01/player_follow_cam.tscn" id="4_gqjdk"]
 [ext_resource type="Texture2D" uid="uid://bygvie252vu2d" path="res://Refactor01/weapons/wall.png" id="4_mc4fd"]
 [ext_resource type="Texture2D" uid="uid://cftn0n1knrdmx" path="res://ramp_arrow.png" id="5_31gcn"]
 [ext_resource type="Texture2D" uid="uid://64b2dggh8wd3" path="res://Refactor01/DialogPortraits/dialog_portrait_02.png" id="6_vqerg"]
@@ -18,7 +19,7 @@ size = Vector2(136, 79)
 
 [node name="refactor01_explore_level" type="Node2D" node_paths=PackedStringArray("follow_cam", "player_object", "player_start", "quest_marker")]
 script = ExtResource("1_2e4ma")
-follow_cam = NodePath("PlayerFollowCam")
+follow_cam = NodePath("")
 player_object = NodePath("player_object")
 player_start = NodePath("PlayerStart")
 quest_marker = NodePath("quest_marker")
@@ -34,12 +35,8 @@ position = Vector2(3915, 11440)
 position = Vector2(179, 2357)
 lock_rotation = true
 
-[node name="PlayerFollowCam" type="Camera2D" parent="."]
-zoom = Vector2(0.66, 0.66)
-process_callback = 0
-limit_smoothed = true
-position_smoothing_enabled = true
-position_smoothing_speed = 10.0
+[node name="PlayerFollowCam" parent="." node_paths=PackedStringArray("player_object") instance=ExtResource("4_gqjdk")]
+player_object = NodePath("../player_object")
 
 [node name="ramps" type="Node2D" parent="."]
 

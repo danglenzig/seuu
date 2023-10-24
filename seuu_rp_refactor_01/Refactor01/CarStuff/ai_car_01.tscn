@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://c8urud6lhpbpf"]
+
+[ext_resource type="Script" path="res://ai_car_01.gd" id="1_qskwx"]
+[ext_resource type="Texture2D" uid="uid://b5tceiboerc7t" path="res://Refactor01/CarStuff/car_01_sprite.png" id="2_wdje6"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_fum58"]
+radius = 23.3452
+
+[node name="ai_car_01" type="CharacterBody2D" node_paths=PackedStringArray("my_sprite", "my_nav_agent")]
+script = ExtResource("1_qskwx")
+my_sprite = NodePath("Sprite2D")
+my_nav_agent = NodePath("NavigationAgent2D")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 3)
+shape = SubResource("CircleShape2D_fum58")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.33, 0.33)
+texture = ExtResource("2_wdje6")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+
+[connection signal="target_reached" from="NavigationAgent2D" to="." method="_on_navigation_agent_2d_target_reached"]

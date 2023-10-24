@@ -26,13 +26,4 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
-	handle_follow_cam()
-	
-func handle_follow_cam():
-	
-	
-	var player_velocity = player_object.get_linear_velocity()
-	player_velocity *= folow_cam_prediction
-	var forward_pos = player_object.position + player_velocity
-	var camera_pos = (player_object.position + forward_pos) / 2
-	follow_cam.position = camera_pos
+	pass
