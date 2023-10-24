@@ -10,6 +10,9 @@ var shot_caller: Node
 @export var follow_cam: Camera2D
 @export var player_object: RigidBody2D
 @export var player_start: Marker2D
+@export var folow_cam_prediction: float = .5
+
+@export var quest_marker: Node2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -22,8 +25,14 @@ func _ready():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _physics_process(delta):
 	handle_follow_cam()
 	
 func handle_follow_cam():
-	follow_cam.position = player_object.position
+	
+	
+	var player_velocity = player_object.get_linear_velocity()
+	player_velocity *= folow_cam_prediction
+	var forward_pos = player_object.position + player_velocity
+	var camera_pos = (player_object.position + forward_pos) / 2
+	follow_cam.position = camera_pos

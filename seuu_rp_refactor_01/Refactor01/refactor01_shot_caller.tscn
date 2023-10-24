@@ -4,7 +4,7 @@
 [ext_resource type="FontFile" uid="uid://drgsxmxrovwlu" path="res://Fonts/pcsenior.ttf" id="2_cfhqs"]
 [ext_resource type="Texture2D" uid="uid://vhmwxtq026g1" path="res://Slides/i_am_a_cutscene.png" id="3_8jvo3"]
 [ext_resource type="Script" path="res://Refactor01/quest_panel.gd" id="4_3y0tq"]
-[ext_resource type="Texture2D" uid="uid://c7rbidf2c3nia" path="res://Refactor01/DialogPortraits/dialog_portrait_01.png" id="4_yrfrc"]
+[ext_resource type="Texture2D" uid="uid://c7rbidf2c3nia" path="res://Old_Shit/Scripts/dialog_portrait_01.png" id="4_tn1r8"]
 [ext_resource type="Texture2D" uid="uid://64b2dggh8wd3" path="res://Refactor01/DialogPortraits/dialog_portrait_02.png" id="5_fxauh"]
 
 [node name="refactor01_shot_caller" type="Node"]
@@ -180,7 +180,7 @@ z_index = 100
 position = Vector2(1008, 470)
 rotation = 0.174533
 scale = Vector2(0.66, 0.66)
-texture = ExtResource("4_yrfrc")
+texture = ExtResource("4_tn1r8")
 
 [node name="cutscene_dialog_portrait_left" type="Sprite2D" parent="CanvasLayer/CutsceneModePanel"]
 z_index = 100

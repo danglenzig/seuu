@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://clsnmplpywj7g"]
+[gd_scene load_steps=10 format=3 uid="uid://clsnmplpywj7g"]
 
 [ext_resource type="Script" path="res://Refactor01/ExploreScenes/refactor01_explore_level.gd" id="1_2e4ma"]
 [ext_resource type="PackedScene" uid="uid://tlfpk2gax8wh" path="res://Refactor01/ExploreScenes/explore_mode_grid.tscn" id="2_sm4gb"]
 [ext_resource type="PackedScene" uid="uid://d01un2resfa7u" path="res://Refactor01/CarStuff/player_object.tscn" id="3_0af1l"]
 [ext_resource type="Texture2D" uid="uid://bygvie252vu2d" path="res://Refactor01/weapons/wall.png" id="4_mc4fd"]
 [ext_resource type="Texture2D" uid="uid://cftn0n1knrdmx" path="res://ramp_arrow.png" id="5_31gcn"]
+[ext_resource type="Texture2D" uid="uid://64b2dggh8wd3" path="res://Refactor01/DialogPortraits/dialog_portrait_02.png" id="6_vqerg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qj0ak"]
 size = Vector2(152, 2375)
@@ -15,11 +16,12 @@ size = Vector2(2353, 54)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lrpbo"]
 size = Vector2(136, 79)
 
-[node name="refactor01_explore_level" type="Node2D" node_paths=PackedStringArray("follow_cam", "player_object", "player_start")]
+[node name="refactor01_explore_level" type="Node2D" node_paths=PackedStringArray("follow_cam", "player_object", "player_start", "quest_marker")]
 script = ExtResource("1_2e4ma")
 follow_cam = NodePath("PlayerFollowCam")
 player_object = NodePath("player_object")
 player_start = NodePath("PlayerStart")
+quest_marker = NodePath("quest_marker")
 
 [node name="explore_mode_grid" parent="." instance=ExtResource("2_sm4gb")]
 z_index = -1000
@@ -37,7 +39,7 @@ zoom = Vector2(0.66, 0.66)
 process_callback = 0
 limit_smoothed = true
 position_smoothing_enabled = true
-position_smoothing_speed = 20.0
+position_smoothing_speed = 10.0
 
 [node name="ramps" type="Node2D" parent="."]
 
@@ -118,7 +120,7 @@ scale = Vector2(0.15, 0.33)
 texture = ExtResource("5_31gcn")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="ramps/eastbound_ramp"]
-position = Vector2(59, 98)
+position = Vector2(89, 97)
 collision_layer = 3
 collision_mask = 3
 
@@ -804,3 +806,10 @@ shape = SubResource("RectangleShape2D_lrpbo")
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="ramps/westbound_ramp4/StaticBody2D"]
 position = Vector2(26, 1143)
 shape = SubResource("RectangleShape2D_lrpbo")
+
+[node name="quest_marker" type="Node2D" parent="."]
+position = Vector2(12293, 7672)
+
+[node name="Sprite2D" type="Sprite2D" parent="quest_marker"]
+z_index = -500
+texture = ExtResource("6_vqerg")
