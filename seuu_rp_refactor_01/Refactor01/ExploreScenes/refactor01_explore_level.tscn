@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://clsnmplpywj7g"]
+[gd_scene load_steps=13 format=3 uid="uid://clsnmplpywj7g"]
 
 [ext_resource type="Script" path="res://Refactor01/ExploreScenes/refactor01_explore_level.gd" id="1_2e4ma"]
 [ext_resource type="PackedScene" uid="uid://tlfpk2gax8wh" path="res://Refactor01/ExploreScenes/explore_mode_grid.tscn" id="2_sm4gb"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://bygvie252vu2d" path="res://Refactor01/weapons/wall.png" id="4_mc4fd"]
 [ext_resource type="Texture2D" uid="uid://cftn0n1knrdmx" path="res://ramp_arrow.png" id="5_31gcn"]
 [ext_resource type="Texture2D" uid="uid://64b2dggh8wd3" path="res://Refactor01/DialogPortraits/dialog_portrait_02.png" id="6_vqerg"]
+[ext_resource type="Script" path="res://Refactor01/ExploreScenes/quest_marker.gd" id="7_wb53e"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qj0ak"]
 size = Vector2(152, 2375)
@@ -17,9 +18,11 @@ size = Vector2(2353, 54)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lrpbo"]
 size = Vector2(136, 79)
 
-[node name="refactor01_explore_level" type="Node2D" node_paths=PackedStringArray("follow_cam", "player_object", "player_start", "quest_marker")]
+[sub_resource type="CircleShape2D" id="CircleShape2D_i5e5h"]
+radius = 233.174
+
+[node name="refactor01_explore_level" type="Node2D" node_paths=PackedStringArray("player_object", "player_start", "quest_marker")]
 script = ExtResource("1_2e4ma")
-follow_cam = NodePath("")
 player_object = NodePath("player_object")
 player_start = NodePath("PlayerStart")
 quest_marker = NodePath("quest_marker")
@@ -805,8 +808,17 @@ position = Vector2(26, 1143)
 shape = SubResource("RectangleShape2D_lrpbo")
 
 [node name="quest_marker" type="Node2D" parent="."]
-position = Vector2(12293, 7672)
+position = Vector2(13447, 11451)
+script = ExtResource("7_wb53e")
 
 [node name="Sprite2D" type="Sprite2D" parent="quest_marker"]
 z_index = -500
 texture = ExtResource("6_vqerg")
+
+[node name="Area2D" type="Area2D" parent="quest_marker"]
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="quest_marker/Area2D"]
+shape = SubResource("CircleShape2D_i5e5h")
+
+[connection signal="body_entered" from="quest_marker/Area2D" to="quest_marker" method="_on_area_2d_body_entered"]

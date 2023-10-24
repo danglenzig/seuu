@@ -16,6 +16,8 @@ var current_music: AudioStream
 var current_scene: Node2D = null
 var current_menu: Node2D = null
 
+
+
 @export var start_at_scene_number: int
 
 '''
@@ -57,6 +59,9 @@ var alt_controls_help_label: Label
 var dialog_portrait_right: Sprite2D
 var dialog_portrait_left: Sprite2D
 
+var hud_race_mode_center_text: Label
+
+
 func _ready():
 	
 	print_to_console("The game is starting")
@@ -65,6 +70,7 @@ func _ready():
 	hud_canvas = get_node("CanvasLayer")
 	hud_explore_mode_panel = hud_canvas.get_node("ExploreModePanel")
 	hud_race_mode_panel = hud_canvas.get_node("RaceModePanel")
+	hud_race_mode_center_text = hud_race_mode_panel.get_node("center_text")
 	hud_cutscene_mode_panel = hud_canvas.get_node("CutsceneModePanel")
 	hud_cutscene_dialog_panel = hud_cutscene_mode_panel.get_node("cutscene_dialog_panel")
 	hud_cutscene_slide = hud_cutscene_mode_panel.get_node("cutscene_slide")
@@ -148,6 +154,9 @@ func set_explore_hud_panel_visible(the_bool: bool):
 	
 func set_race_hud_panel_visible(the_bool: bool):
 	hud_race_mode_panel.visible = the_bool
+	
+func set_race_mode_center_text(the_text: String):
+	hud_race_mode_center_text.set_text(the_text)
 	
 func set_cutscene_hud_panel_visible(the_bool: bool):
 	hud_cutscene_mode_panel.visible = the_bool

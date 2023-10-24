@@ -1,11 +1,80 @@
-[gd_scene load_steps=7 format=3 uid="uid://dx0jyaimt46ii"]
+[gd_scene load_steps=24 format=3 uid="uid://dx0jyaimt46ii"]
 
 [ext_resource type="Script" path="res://Refactor01/refactor01_shot_caller.gd" id="1_tqldx"]
 [ext_resource type="FontFile" uid="uid://drgsxmxrovwlu" path="res://Fonts/pcsenior.ttf" id="2_cfhqs"]
 [ext_resource type="Texture2D" uid="uid://vhmwxtq026g1" path="res://Slides/i_am_a_cutscene.png" id="3_8jvo3"]
+[ext_resource type="Texture2D" uid="uid://yfxejob87hrh" path="res://Refactor01/VFX/wipes/Storyboard_1.png" id="3_r8kan"]
+[ext_resource type="Texture2D" uid="uid://blv7mtljjg0un" path="res://Refactor01/VFX/wipes/Storyboard_2.png" id="4_0d40e"]
 [ext_resource type="Script" path="res://Refactor01/quest_panel.gd" id="4_3y0tq"]
 [ext_resource type="Texture2D" uid="uid://c7rbidf2c3nia" path="res://Old_Shit/Scripts/dialog_portrait_01.png" id="4_tn1r8"]
+[ext_resource type="Texture2D" uid="uid://dgsqhe7p7cqmw" path="res://Refactor01/VFX/wipes/Storyboard_3.png" id="5_b5pth"]
 [ext_resource type="Texture2D" uid="uid://64b2dggh8wd3" path="res://Refactor01/DialogPortraits/dialog_portrait_02.png" id="5_fxauh"]
+[ext_resource type="Texture2D" uid="uid://b0cc4jvnwvob6" path="res://Refactor01/VFX/wipes/Storyboard_4.png" id="6_qaocw"]
+[ext_resource type="Script" path="res://Refactor01/screen_wiper.gd" id="7_8jhtq"]
+[ext_resource type="Texture2D" uid="uid://xgymuhoqcfav" path="res://Refactor01/VFX/wipes/Storyboard_5.png" id="7_le0vf"]
+[ext_resource type="Texture2D" uid="uid://ry8ckjdb8kmx" path="res://Refactor01/VFX/wipes/Storyboard_6.png" id="8_b4h7k"]
+[ext_resource type="Texture2D" uid="uid://0avsa5vpu25n" path="res://Refactor01/VFX/wipes/Storyboard_7.png" id="9_jbksq"]
+[ext_resource type="Texture2D" uid="uid://clrsttigj2ymt" path="res://Refactor01/VFX/wipes/Storyboard_8.png" id="10_g82ve"]
+[ext_resource type="Texture2D" uid="uid://c8vckwb4oe1d5" path="res://Refactor01/VFX/wipes/Storyboard_9.png" id="11_rc24h"]
+[ext_resource type="Texture2D" uid="uid://83rg2lajok7y" path="res://Refactor01/VFX/wipes/Storyboard_10.png" id="12_4d5ph"]
+[ext_resource type="Texture2D" uid="uid://bgs5pbmoo3cnf" path="res://Refactor01/VFX/wipes/Storyboard_11.png" id="13_f0orj"]
+[ext_resource type="Texture2D" uid="uid://cu4lqu6w1cnmi" path="res://Refactor01/VFX/wipes/Storyboard_12.png" id="14_alxd0"]
+[ext_resource type="Texture2D" uid="uid://d3art8n3bylpu" path="res://Refactor01/VFX/wipes/Storyboard_13.png" id="15_7qu8h"]
+[ext_resource type="Texture2D" uid="uid://bka62bscwd1og" path="res://Refactor01/VFX/wipes/Storyboard_14.png" id="16_rut2f"]
+[ext_resource type="Texture2D" uid="uid://bjxq7jtdcq406" path="res://Refactor01/VFX/wipes/Storyboard_15.png" id="17_bnnsj"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5lu0l"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_r8kan")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_0d40e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_b5pth")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_qaocw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_le0vf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_b4h7k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_jbksq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_g82ve")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_rc24h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_4d5ph")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_f0orj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_alxd0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_7qu8h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_rut2f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_bnnsj")
+}],
+"loop": false,
+"name": &"wipe",
+"speed": 40.0
+}]
 
 [node name="refactor01_shot_caller" type="Node"]
 script = ExtResource("1_tqldx")
@@ -124,6 +193,22 @@ offset_bottom = 324.0
 grow_horizontal = 2
 grow_vertical = 2
 
+[node name="center_text" type="Label" parent="CanvasLayer/RaceModePanel"]
+layout_mode = 0
+offset_left = 14.0
+offset_top = 223.0
+offset_right = 1141.0
+offset_bottom = 405.0
+theme_override_colors/font_color = Color(1, 1, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_offset_y = 3
+theme_override_fonts/font = ExtResource("2_cfhqs")
+theme_override_font_sizes/font_size = 50
+text = "Center Text!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="CutsceneModePanel" type="Panel" parent="CanvasLayer"]
 z_as_relative = false
 anchors_preset = 8
@@ -190,6 +275,7 @@ scale = Vector2(0.66, 0.66)
 texture = ExtResource("5_fxauh")
 
 [node name="QuestMenuPanel" type="Panel" parent="CanvasLayer"]
+visible = false
 self_modulate = Color(1, 1, 1, 0.921569)
 offset_left = 123.0
 offset_top = 101.0
@@ -231,6 +317,7 @@ horizontal_alignment = 1
 autowrap_mode = 3
 
 [node name="ControlsHelp" type="Panel" parent="CanvasLayer"]
+visible = false
 self_modulate = Color(1, 1, 1, 0.92549)
 offset_left = 18.0
 offset_top = 17.0
@@ -273,3 +360,16 @@ Stop/Reverse: B button
 Steer: Left-stick
 Fire: Right-trigger
 Trap: Left-trigger"
+
+[node name="ScreenWiper" type="Panel" parent="CanvasLayer"]
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("7_8jhtq")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer/ScreenWiper"]
+position = Vector2(570, 308)
+scale = Vector2(0.73, 0.73)
+sprite_frames = SubResource("SpriteFrames_5lu0l")
+animation = &"wipe"
+
+[connection signal="animation_finished" from="CanvasLayer/ScreenWiper/AnimatedSprite2D" to="CanvasLayer/ScreenWiper" method="_on_animated_sprite_2d_animation_finished"]

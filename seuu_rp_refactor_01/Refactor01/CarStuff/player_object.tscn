@@ -150,7 +150,7 @@ animations = [{
 "speed": 30.0
 }]
 
-[node name="player_object" type="RigidBody2D"]
+[node name="player_object" type="RigidBody2D" groups=["player_object"]]
 rotation = 1.5708
 collision_layer = 2
 physics_material_override = SubResource("PhysicsMaterial_82rbg")
@@ -203,6 +203,7 @@ position = Vector2(-1.79982, -11.9666)
 scale = Vector2(0.440716, 0.304974)
 texture = ExtResource("28_63yx6")
 script = ExtResource("30_1rf06")
+ramp_angle = 35.0
 ground_detect = 12.0
 car_sprite = NodePath("../CarSprite")
 
