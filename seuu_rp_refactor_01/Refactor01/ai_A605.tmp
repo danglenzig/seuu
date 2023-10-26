@@ -1,23 +1,29 @@
-[gd_scene load_steps=8 format=3 uid="uid://qytivwow8ilw"]
+[gd_scene load_steps=7 format=3 uid="uid://qytivwow8ilw"]
 
 [ext_resource type="Script" path="res://Refactor01/ai_lab.gd" id="1_3smxa"]
 [ext_resource type="PackedScene" uid="uid://c8urud6lhpbpf" path="res://Refactor01/CarStuff/ai_car_01.tscn" id="1_5hqg4"]
 [ext_resource type="FontFile" uid="uid://drgsxmxrovwlu" path="res://Fonts/pcsenior.ttf" id="2_aehjx"]
-[ext_resource type="PackedScene" uid="uid://dvkxv2ny2tfdj" path="res://Refactor01/CarStuff/dev_car.tscn" id="4_t78se"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_bakry"]
-vertices = PackedVector2Array(430, 53, 640, 55, 838, 112, 889, 316, 844, 545, 541, 572, 279, 471, 270, 299, 329, 159)
+vertices = PackedVector2Array(452, 70, 637, 59, 838, 112, 889, 316, 844, 545, 541, 572, 279, 471, 270, 299, 329, 159)
 polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3, 4, 5, 6, 7, 8)])
-outlines = Array[PackedVector2Array]([PackedVector2Array(329, 159, 270, 299, 279, 471, 541, 572, 844, 545, 889, 316, 838, 112, 640, 55, 430, 53)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(329, 159, 270, 299, 279, 471, 541, 572, 844, 545, 889, 316, 838, 112, 637, 59, 452, 70)])
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_6pyff"]
 radius = 159.138
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_n6crs"]
-size = Vector2(214, 21)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xbtij"]
+size = Vector2(198, 27)
 
 [node name="ai_lab" type="Node2D"]
 script = ExtResource("1_3smxa")
+
+[node name="ai_car_01" parent="." node_paths=PackedStringArray("race_checkpoints") instance=ExtResource("1_5hqg4")]
+position = Vector2(391, 423)
+move_speed = 500.0
+my_target_desired_distance = 100.0
+rotate_speed = 0.1
+race_checkpoints = [NodePath("../track/checkpoints/checkpoint_01"), NodePath("../track/checkpoints/checkpoint_02"), NodePath("../track/checkpoints/checkpoint_03"), NodePath("../track/checkpoints/checkpoint_04"), NodePath("../track/checkpoints/checkpoint_05"), NodePath("../track/checkpoints/checkpoint_06"), NodePath("../track/checkpoints/checkpoint_07"), NodePath("../track/checkpoints/checkpoint_08"), NodePath("../track/checkpoints/checkpoint_09"), NodePath("../track/checkpoints/checkpoint_10")]
 
 [node name="track" type="Node2D" parent="."]
 
@@ -25,7 +31,6 @@ script = ExtResource("1_3smxa")
 navigation_polygon = SubResource("NavigationPolygon_bakry")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="track/NavigationRegion2D"]
-position = Vector2(1, -3)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="track/NavigationRegion2D/StaticBody2D"]
 position = Vector2(572, 316)
@@ -63,16 +68,15 @@ position = Vector2(472, 495)
 [node name="checkpoint_10" type="Marker2D" parent="track/checkpoints"]
 position = Vector2(341, 374)
 
-[node name="lap_trigger" type="Area2D" parent="track"]
-position = Vector2(360, 310)
+[node name="lap_counter" type="Area2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="track/lap_trigger"]
-position = Vector2(-4, 1)
-shape = SubResource("RectangleShape2D_n6crs")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="lap_counter"]
+position = Vector2(338, 308.5)
+shape = SubResource("RectangleShape2D_xbtij")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="lap_counter_text" type="Label" parent="CanvasLayer"]
+[node name="Label" type="Label" parent="CanvasLayer"]
 offset_left = 30.0
 offset_top = 23.0
 offset_right = 120.0
@@ -85,13 +89,4 @@ theme_override_fonts/font = ExtResource("2_aehjx")
 theme_override_font_sizes/font_size = 20
 text = "lap number"
 
-[node name="ai_car_01" parent="." node_paths=PackedStringArray("race_checkpoints") instance=ExtResource("1_5hqg4")]
-position = Vector2(390, 441)
-move_speed = 1000.0
-race_checkpoints = [NodePath("../track/checkpoints/checkpoint_01"), NodePath("../track/checkpoints/checkpoint_03"), NodePath("../track/checkpoints/checkpoint_05"), NodePath("../track/checkpoints/checkpoint_07"), NodePath("../track/checkpoints/checkpoint_09")]
-
-[node name="dev_car" parent="." instance=ExtResource("4_t78se")]
-position = Vector2(589, 110)
-lock_rotation = true
-
-[connection signal="did_a_lap" from="ai_car_01" to="." method="_on_ai_car_01_did_a_lap"]
+[connection signal="body_exited" from="lap_counter" to="." method="_on_lap_counter_body_exited"]
